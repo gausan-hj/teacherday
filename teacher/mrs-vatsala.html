@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mrs. Vatsala - Teachers' Day Celebration">
+    <title>Mrs. Vatsala | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --theme-primary: #000000;
+            --theme-secondary: #1a1a1a;
+            --theme-tertiary: #333333;
+            --theme-light: #666666;
+            --theme-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+        }
+        
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #333333 0%, #000000 100%);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 255, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3); }
+        }
+        
+        .profile-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #333333 0%, #000000 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+        
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(26, 26, 26, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(51, 51, 51, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">🌟</div>
+            <h1 class="profile-name">Mrs. Vatsala</h1>
+            <p class="profile-title">English Teacher</p>
+            <p class="profile-message">
+                Thank you, Mrs. Vatsala, for your exceptional teaching and unwavering dedication to education. Your elegant approach to teaching and sophisticated methods have inspired countless students to achieve their best. You bring a unique perspective to every lesson, challenging us to think critically and reach new heights. Your patience and understanding create a supportive learning environment where everyone feels valued. You have a remarkable ability to make complex concepts accessible and engaging. Your commitment to excellence in education sets a shining example for both students and colleagues. Thank you for your invaluable contributions to our school community and for being such an inspiring mentor. Your influence will continue to guide us long after we leave your classroom.
+            </p>
+            <div class="profile-quote">
+                "The mind is not a vessel to be filled, but a fire to be kindled."
+            </div>
+            <a href="../index.html" class="back-button">← Back to Celebration</a>
+            
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">Student Messages</h3>
+                <div class="message-wall-content">
+                    <div class="message-item">
+                        <p class="message-sender">Anonymous Student A</p>
+                        <p class="message-text">Thank you for teaching us Past Tense, Present Tense and Future Tense patiently. I can now use them correctly in my writing.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">A Grateful Student</p>
+                        <p class="message-text">Your grammar lessons have helped me improve my English significantly. Thank you for your patience!</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Anonymous Student B</p>
+                        <p class="message-text">Thank you for helping us improve our vocabulary. I now know many new words and how to use them properly.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">A Former Student</p>
+                        <p class="message-text">The speaking practice you gave us really boosted my confidence. Thank you for preparing me well!</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">A Student You Inspired</p>
+                        <p class="message-text">Your writing tips are very practical. My essay writing has improved a lot thanks to your guidance.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Anonymous Student C</p>
+                        <p class="message-text">Thank you for making grammar lessons interesting. I used to find them boring, but now I enjoy learning.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">A Grateful Student</p>
+                        <p class="message-text">Your vocabulary exercises are very helpful. I can now express myself better in English.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Anonymous Student D</p>
+                        <p class="message-text">Thank you for correcting our mistakes gently. I learn better when you explain why something is wrong.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">A Former Student</p>
+                        <p class="message-text">The grammar foundation you taught me has been invaluable in my university studies. Thank you!</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">A Student You Inspired</p>
+                        <p class="message-text">Your speaking classes helped me overcome my fear of public speaking. I am much more confident now.</p>
+                    </div>
+                </div>
+                <button class="view-more-button" id="viewMoreButton">View More Messages</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+            
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mr. Lim - Teachers' Day Celebration">
+    <title>Mr. Lim | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: var(--glass-bg);
+            border: 2px solid var(--glass-border);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--ivory-white) 0%, var(--champagne) 100%);
+            border: 4px solid var(--gold-secondary);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(255, 215, 0, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.6), 0 10px 30px rgba(0, 0, 0, 0.2); }
+        }
+        
+        .profile-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            background: var(--text-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--ivory-white);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gold-primary);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid var(--gold-secondary);
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
+            color: var(--navy-blue);
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="golden-gradient"></div>
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">👨‍🏫</div>
+            <h1 class="profile-name">Mr. Lim</h1>
+            <p class="profile-title">Inspiring English Literature Teacher</p>
+            <p class="profile-message">
+                Your love for literature opens new worlds for students every day. You teach not just 
+                words and grammar, but empathy, understanding, and the beauty of human expression. 
+                Thank you for being a beacon of knowledge and inspiration.
+            </p>
+            <div class="profile-quote">
+                "The more that you read, the more things you will know. The more that you learn, the more places you'll go."
+            </div>
+            <a href="../index.html" class="back-button">← Back to Celebration</a>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

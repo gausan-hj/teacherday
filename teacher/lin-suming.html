@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="林素铭老师 - Teachers' Day Celebration">
+    <title>林素铭老师 | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --theme-primary: #1296F0;
+            --theme-secondary: #0D7ACC;
+            --theme-tertiary: #0860B8;
+            --theme-light: #7EC8E3;
+            --theme-gradient: linear-gradient(135deg, #1296F0 0%, #0D7ACC 50%, #0860B8 100%);
+        }
+        
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(18, 150, 240, 0.1);
+            border: 2px solid rgba(18, 150, 240, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(18, 150, 240, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #7EC8E3 0%, #1296F0 100%);
+            border: 4px solid var(--theme-secondary);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(18, 150, 240, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(18, 150, 240, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(18, 150, 240, 0.6), 0 10px 30px rgba(0, 0, 0, 0.2); }
+        }
+        
+        .profile-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            background: var(--theme-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--theme-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--theme-primary);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid var(--theme-secondary);
+            background: rgba(18, 150, 240, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--theme-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(18, 150, 240, 0.3);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(18, 150, 240, 0.5);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--theme-primary);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(18, 150, 240, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(13, 122, 204, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(8, 96, 184, 0.08) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .doraemon-bell {
+            position: fixed;
+            bottom: 10%;
+            right: 10%;
+            font-size: 3rem;
+            animation: bellRing 2s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        @keyframes bellRing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Doraemon Bell Decoration -->
+    <div class="doraemon-bell">🔔</div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">🤖</div>
+            <h1 class="profile-name">林素铭老师</h1>
+            <p class="profile-title">历史老师</p>
+            <p class="profile-message">
+                感谢林素铭老师的创新教学和对历史的热爱。您用生动的历史知识为我们打开了认识世界的大门。您的课堂总是充满惊喜和创意，让我们在探索中学习，在实践中成长。您教会我们不仅要掌握历史知识，更要学会从历史中汲取智慧。您的创新精神和前瞻思维深深影响着我们，让我们敢于思考，勇于探索。感谢您为培养我们的历史素养付出的努力，您的教诲将伴随我们走向更广阔的未来。祝您教师节快乐，在历史教育的道路上继续发光发热！
+            </p>
+            <div class="profile-quote">
+                "未来属于那些相信自己梦想之美的人。"
+            </div>
+            <a href="../index.html" class="back-button">← 返回庆祝页面</a>
+            
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">学生留言</h3>
+                <div class="message-wall-content">
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 A</p>
+                        <p class="message-text">感谢老师让我们了解马来西亚是如何形成的。现在我对国家的历史有了更深的认识。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">谢谢老师带我们认识英国统治时期的历史，让我理解了殖民时代的影响。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 B</p>
+                        <p class="message-text">感谢老师教导我们日本占领马来亚时期的重要历史事件，那段历史让我印象深刻。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师讲的马来西亚独立过程很详细，让我明白了独立的不易。感谢您的教导！</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">马六甲王朝的历史老师讲得很生动，让我对古代历史产生了兴趣。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 C</p>
+                        <p class="message-text">感谢老师讲解马来西亚的形成过程，让我理解了多元文化的重要性。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">英国统治马来亚的历史老师分析得很透彻，让我明白了历史事件的因果关系。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 D</p>
+                        <p class="message-text">感谢老师教导我们日本占领时期的历史，那段历史让我更加珍惜现在的和平。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师教的马来西亚历史知识对我现在的工作很有帮助。感谢您的教导！</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">老师讲解历史时总是结合现实，让我明白历史对现在的意义。</p>
+                    </div>
+                </div>
+                <button class="view-more-button" id="viewMoreButton">查看更多留言</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+            
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cikgu RIZAN - Teachers' Day Celebration">
+    <title>Cikgu RIZAN | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --theme-primary: #E91E63;
+            --theme-secondary: #C2185B;
+            --theme-tertiary: #AD1457;
+            --theme-light: #F8BBD0;
+            --theme-gradient: linear-gradient(135deg, #E91E63 0%, #C2185B 50%, #AD1457 100%);
+        }
+        
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(233, 30, 99, 0.1);
+            border: 2px solid rgba(233, 30, 99, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(233, 30, 99, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #F8BBD0 0%, #E91E63 100%);
+            border: 4px solid var(--theme-secondary);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(233, 30, 99, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(233, 30, 99, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(233, 30, 99, 0.6), 0 10px 30px rgba(0, 0, 0, 0.2); }
+        }
+        
+        .profile-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            background: var(--theme-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--theme-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--theme-primary);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid var(--theme-secondary);
+            background: rgba(233, 30, 99, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--theme-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(233, 30, 99, 0.5);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--theme-primary);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(233, 30, 99, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(194, 24, 91, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(173, 20, 87, 0.08) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">🌹</div>
+            <h1 class="profile-name">Cikgu RIZAN</h1>
+            <p class="profile-title">Guru Bahasa Melayu</p>
+            <p class="profile-message">
+                Terima kasih Cikgu RIZAN atas dedikasi dan komitmen yang tidak pernah putus dalam mendidik kami. Anda adalah seorang pendidik yang luar biasa yang sentiasa memberikan inspirasi kepada setiap pelajar. Kaedah pengajaran yang unik dan pendekatan yang mesra menjadikan setiap kelas menjadi pengalaman yang berharga. Anda bukan sahaja mengajar kami mata pelajaran, tetapi juga membimbing kami untuk menjadi individu yang lebih baik. Kesabaran anda dalam menangani setiap pelajar dan keupayaan anda untuk melihat potensi dalam setiap orang adalah sesuatu yang sangat kami hargai. Semoga ilmu yang anda sampaikan akan terus bercahaya dan memberikan manfaat kepada kami sepanjang hayat. Selamat Hari Guru!
+            </p>
+            <div class="profile-quote">
+                "Pendidikan adalah senjata paling berkuasa yang boleh anda gunakan untuk mengubah dunia."
+            </div>
+            <a href="../index.html" class="back-button">← Kembali ke Sambutan</a>
+            
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">Kata-kata Pelajar</h3>
+                <div class="message-wall-content">
+                    <div class="message-item">
+                        <p class="message-sender">Pelajar Anonim A</p>
+                        <p class="message-text">Terima kasih Cikgu kerana mengajar kata hubung dengan cara yang mudah difahami. Saya akhirnya boleh membezakan jenis-jenis kata hubung dengan baik.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Seorang Pelajar</p>
+                        <p class="message-text">Latihan tatabahasa yang Cikgu berikan sangat membantu. Saya lebih yakin untuk menjawab soalan peperiksaan sekarang.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Pelajar Anonim B</p>
+                        <p class="message-text">Cikgu, terima kasih kerana sabar mengajar kami bina ayat. Saya dulu susah nak buat ayat yang betul, tapi sekarang dah boleh.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Bekas Pelajar</p>
+                        <p class="message-text">Tips karangan dari Cikgu sangat berguna. Markah karangan saya naik banyak selepas ikut cara Cikgu ajar.</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Pelajar Yang Menghargai Anda</p>
+                        <p class="message-text">Pemahaman teks yang Cikgu ajar buat saya faham bahan bacaan dengan lebih cepat. Terima kasih Cikgu!</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Pelajar Anonim C</p>
+                        <p class="message-text">Peribahasa yang Cikgu kongsi sangat menarik. Saya suka belajar maksud dan penggunaan peribahasa dalam ayat.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Seorang Pelajar</p>
+                        <p class="message-text">Latihan Bahasa Melayu yang Cikgu sediakan sentiasa mencukupi. Saya rasa lebih bersedia untuk peperiksaan.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Pelajar Anonim D</p>
+                        <p class="message-text">Cikgu, cara Cikgu terangkan tatabahasa sangat jelas. Saya tak pernah bosan dalam kelas Cikgu.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Bekas Pelajar</p>
+                        <p class="message-text">Terima kasih Cikgu kerana selalu beri latihan peperiksaan. Ia sangat membantu persediaan saya.</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">Pelajar Yang Menghargai Anda</p>
+                        <p class="message-text">Kelas Bahasa Melayu Cikgu selalu menyeronokkan. Saya belajar banyak benda baru setiap hari.</p>
+                    </div>
+                </div>
+                <button class="view-more-button" id="viewMoreButton">Lihat Lebih Banyak</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        // Mobile message wall toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+            
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                // Hide button if no hidden messages
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

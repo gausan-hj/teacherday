@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黄荣副老师 - Teachers' Day Celebration">
+    <title>黄荣副老师 | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --theme-primary: rgba(255, 255, 255, 0.9);
+            --theme-secondary: rgba(255, 255, 255, 0.7);
+            --theme-tertiary: rgba(255, 255, 255, 0.5);
+            --theme-light: rgba(255, 255, 255, 0.3);
+            --theme-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.5) 100%);
+        }
+        
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(255, 255, 255, 0.1),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1); }
+            50% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(255, 255, 255, 0.15); }
+        }
+        
+        .profile-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.55) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.4);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+        
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .crystal-reflection {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.03) 50%, transparent 60%);
+            animation: crystalShimmer 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes crystalShimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+    
+    <!-- Crystal Reflection Effect -->
+    <div class="crystal-reflection"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">💎</div>
+            <h1 class="profile-name">黄荣副老师</h1>
+            <p class="profile-title">数学老师</p>
+            <p class="profile-message">
+                感谢黄荣副老师的悉心教导和无私奉献。您用真诚和耐心对待每一位学生。您的教学思路清晰明了，能够将复杂的知识化繁为简，让我们轻松掌握。您总是以身作则，用高尚的品德影响着我们每一个人。在您的课堂上，我们不仅学到了知识，更学会了如何做人做事。您对教育事业的热爱和执着深深感染着我们，激励我们不断进步。感谢您为我们的成长付出的心血和汗水，您的教诲将永远指引我们前进的方向。祝您教师节快乐，工作顺利，桃李满天下！
+            </p>
+            <div class="profile-quote">
+                "思维的清晰意味着激情的清晰；这就是为什么一个伟大而清晰的头脑会热烈地爱着，并清晰地看到它所爱的东西。"
+            </div>
+            <a href="../index.html" class="back-button">← 返回庆祝页面</a>
+            
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">学生留言</h3>
+                <div class="message-wall-content">
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 A</p>
+                        <p class="message-text">感谢老师耐心教导我们解方程。现在我终于掌握了一元二次方程的解法了。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">老师讲解几何证明题时思路清晰，让我对逻辑推理有了更深的认识。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 B</p>
+                        <p class="message-text">谢谢老师教我们代数的基础，现在解方程不再那么困难了。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师教的数学逻辑思维对我大学学习很有帮助。感谢您打下的坚实基础！</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">以前觉得代数很抽象，但老师的课让我觉得数学其实很实用。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 C</p>
+                        <p class="message-text">老师讲解几何图形的性质时很生动，让我很容易记住定理。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">方程组的解法老师教得很清楚，我现在能独立完成复杂的题目了。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 D</p>
+                        <p class="message-text">感谢老师耐心教导我们数学逻辑，现在解题时思路清晰多了。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师教的几何知识对我现在的工作很有帮助。感谢您的教导！</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">老师讲解代数公式时总是举生活中的例子，让我很容易理解概念。</p>
+                    </div>
+                </div>
+                <button class="view-more-button" id="viewMoreButton">查看更多留言</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+            
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

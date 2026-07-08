@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="林淑娟老师 - Teachers' Day Celebration">
+    <title>林淑娟老师 | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --theme-primary: #F44336;
+            --theme-secondary: #D32F2F;
+            --theme-tertiary: #B71C1C;
+            --theme-light: #FFCDD2;
+            --theme-gradient: linear-gradient(135deg, #F44336 0%, #D32F2F 50%, #B71C1C 100%);
+        }
+        
+        .teacher-profile {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(244, 67, 54, 0.1);
+            border: 2px solid rgba(244, 67, 54, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(244, 67, 54, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #FFCDD2 0%, #F44336 100%);
+            border: 4px solid var(--theme-secondary);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 
+                0 0 30px rgba(244, 67, 54, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(244, 67, 54, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(244, 67, 54, 0.6), 0 10px 30px rgba(0, 0, 0, 0.2); }
+        }
+        
+        .profile-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            background: var(--theme-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--theme-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--theme-primary);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 3px solid var(--theme-secondary);
+            background: rgba(244, 67, 54, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--theme-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(244, 67, 54, 0.3);
+            transition: var(--transition-smooth);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(244, 67, 54, 0.5);
+        }
+        
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--theme-primary);
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(244, 67, 54, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(211, 47, 47, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(183, 28, 28, 0.08) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+    
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">❤️</div>
+            <h1 class="profile-name">林淑娟老师</h1>
+            <p class="profile-title">数学老师</p>
+            <p class="profile-message">
+                感谢林淑娟老师的辛勤付出和无私关爱。您用爱心和耐心陪伴我们成长，在您的课堂上，我们不仅学到了知识，更感受到了温暖。您总是能够及时发现我们的困难，并给予最及时的帮助和鼓励。您的教学方法独特而有效，让学习变得轻松愉快。您教会我们要有责任心，要懂得感恩。您的言传身教深深地影响着我们，让我们成为更好的人。感谢您为教育事业奉献的青春和热血，您的恩情我们永远铭记在心。祝您教师节快乐，身体健康，万事如意！
+            </p>
+            <div class="profile-quote">
+                "教学是创造所有其他职业的职业。"
+            </div>
+            <a href="../index.html" class="back-button">← 返回庆祝页面</a>
+            
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">学生留言</h3>
+                <div class="message-wall-content">
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 A</p>
+                        <p class="message-text">感谢老师耐心教导我们 sin、cos 和 tan。现在我终于理解三角函数的原理了。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">老师讲解几何图形时非常清晰，让我对空间关系有了更深的认识。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">匿名学生 B</p>
+                        <p class="message-text">谢谢老师帮助我们理解三角函数，解题技巧很实用，数学成绩提高了。</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师教的三角函数基础对我大学学习很有帮助。感谢您打下的坚实基础！</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">以前觉得三角函数很难，但老师的课让我觉得数学其实很有趣。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 C</p>
+                        <p class="message-text">老师讲解 sin 和 cos 的关系时很生动，让我一下子就记住了公式。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位感谢您的学生</p>
+                        <p class="message-text">几何证明题老师教的方法很巧妙，我现在能独立完成很多题目了。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">匿名学生 D</p>
+                        <p class="message-text">感谢老师耐心教导我们 tan 的应用，现在解题时思路清晰多了。</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位毕业生</p>
+                        <p class="message-text">老师教的数学思维方法对我现在的工作很有帮助。感谢您的教导！</p>
+                    </div>
+                    <div class="message-item hidden-message">
+                        <p class="message-sender">一位喜欢这门课的学生</p>
+                        <p class="message-text">老师讲解三角函数时总是举生活中的例子，让我很容易理解概念。</p>
+                    </div>
+                </div>
+                <button class="view-more-button" id="viewMoreButton">查看更多留言</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+            
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
