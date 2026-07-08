@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teachers' Day Celebration - A tribute to our beloved educators">
+    <title>Teachers' Day Celebration | Hari Guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="golden-gradient"></div>
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Central Badge Section -->
+        <section class="badge-section">
+            <div class="badge-container">
+                <!-- Outer Glow -->
+                <div class="badge-outer-glow"></div>
+                
+                <!-- Wreath -->
+                <div class="wreath">
+                    <svg class="wreath-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Gradients for realistic flowers -->
+                            <radialGradient id="peonyGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#FFB6C1"/>
+                                <stop offset="70%" style="stop-color:#FF69B4"/>
+                                <stop offset="100%" style="stop-color:#FF1493"/>
+                            </radialGradient>
+                            <radialGradient id="cherryGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#FFB7C5"/>
+                                <stop offset="100%" style="stop-color:#FF69B4"/>
+                            </radialGradient>
+                            <radialGradient id="goldLeafGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#FFD700"/>
+                                <stop offset="50%" style="stop-color:#FFA500"/>
+                                <stop offset="100%" style="stop-color:#DAA520"/>
+                            </radialGradient>
+                            <radialGradient id="oliveGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#6B8E23"/>
+                                <stop offset="100%" style="stop-color:#4A7C59"/>
+                            </radialGradient>
+                            <radialGradient id="berryGradient" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#FFD700"/>
+                                <stop offset="100%" style="stop-color:#DAA520"/>
+                            </radialGradient>
+                            <!-- Filters for 3D depth -->
+                            <filter id="shadow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="rgba(0,0,0,0.3)"/>
+                                <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="rgba(0,0,0,0.2)"/>
+                            </filter>
+                            <filter id="glowEffect">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Circular Vine Base - Thicker -->
+                        <circle cx="200" cy="200" r="175" fill="none" stroke="#6B8E23" stroke-width="5" opacity="0.4" filter="url(#shadow3d)"/>
+                        <circle cx="200" cy="200" r="170" fill="none" stroke="#8B9A6B" stroke-width="3" opacity="0.3" filter="url(#shadow3d)"/>
+                        <circle cx="200" cy="200" r="180" fill="none" stroke="#5A7C59" stroke-width="2" opacity="0.25" filter="url(#shadow3d)"/>
+                        
+                        <!-- Top Section - Dense Floral Arrangement -->
+                        <g class="floral-top">
+                            <!-- Large Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M200,30 Q190,20 185,35 Q180,25 175,40 Q170,30 165,45 Q175,35 180,50 Q185,40 190,55 Q195,45 200,60 Q205,45 210,55 Q215,40 220,50 Q225,35 230,45 Q235,30 230,40 Q225,25 220,35 Q215,20 210,25 Q205,15 200,30" fill="url(#peonyGradient)" opacity="0.9"/>
+                                <circle cx="200" cy="45" r="8" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Medium Peony Left -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M140,40 Q135,35 130,45 Q125,38 120,48 Q130,42 135,52 Q140,46 145,56 Q135,50 140,60 Q130,54 135,64" fill="url(#peonyGradient)" opacity="0.8"/>
+                                <circle cx="135" cy="50" r="5" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Medium Peony Right -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M260,40 Q265,35 270,45 Q275,38 280,48 Q270,42 265,52 Q260,46 255,56 Q265,50 260,60 Q270,54 265,64" fill="url(#peonyGradient)" opacity="0.8"/>
+                                <circle cx="265" cy="50" r="5" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M160,50 Q155,45 150,50 Q145,48 140,55 Q150,52 155,58 Q160,55 165,60 Q160,58 155,65 Q150,62 145,68 Q155,65 160,70 Q165,68 170,72 Q160,70 155,75 Q150,72 145,78 Q155,75 160,80" fill="url(#cherryGradient)" opacity="0.85"/>
+                                <circle cx="155" cy="62" r="4" fill="#FFFACD"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M240,50 Q245,45 250,50 Q255,48 260,55 Q250,52 245,58 Q240,55 235,60 Q240,58 235,65 Q240,62 245,68 Q235,65 230,72 Q240,70 245,75 Q250,72 255,78 Q245,75 240,80" fill="url(#cherryGradient)" opacity="0.85"/>
+                                <circle cx="245" cy="62" r="4" fill="#FFFACD"/>
+                            </g>
+                            
+                            <!-- Additional Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M110,70 Q105,65 100,70 Q95,68 90,75 Q100,72 105,78 Q110,75 115,80 Q110,78 105,85 Q100,82 95,88 Q105,85 110,90" fill="url(#cherryGradient)" opacity="0.75"/>
+                                <circle cx="105" cy="78" r="3" fill="#FFFACD"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M290,70 Q295,65 300,70 Q305,68 310,75 Q300,72 295,78 Q290,75 285,80 Q290,78 295,85 Q300,82 305,88 Q295,85 290,90" fill="url(#cherryGradient)" opacity="0.75"/>
+                                <circle cx="295" cy="78" r="3" fill="#FFFACD"/>
+                            </g>
+                            
+                            <!-- Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M130,60 Q125,55 120,65 Q115,60 110,70 Q120,65 125,75 Q130,70 135,80 Q130,75 125,85 Q120,80 115,90 Q125,85 130,95" fill="url(#goldLeafGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M270,60 Q275,55 280,65 Q285,60 290,70 Q280,65 275,75 Q270,70 265,80 Q270,75 275,85 Q280,80 285,90 Q275,85 270,95" fill="url(#goldLeafGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M100,85 Q95,80 90,90 Q85,85 80,95 Q90,90 95,100 Q100,95 105,105 Q100,100 95,110 Q90,105 85,115 Q95,110 100,120" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M300,85 Q305,80 310,90 Q315,85 320,95 Q310,90 305,100 Q300,95 295,105 Q300,100 305,110 Q310,105 315,115 Q305,110 300,120" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            
+                            <!-- Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M170,35 Q165,30 160,40 Q155,35 150,45 Q160,40 165,50 Q170,45 175,55 Q165,50 170,60 Q155,55 160,65" fill="url(#oliveGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M230,35 Q235,30 240,40 Q245,35 250,45 Q240,40 235,50 Q230,45 225,55 Q235,50 230,60 Q245,55 240,65" fill="url(#oliveGradient)" opacity="0.75"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Bottom Section - Dense Floral Arrangement -->
+                        <g class="floral-bottom">
+                            <!-- Large Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M200,370 Q190,380 185,365 Q180,375 175,360 Q170,370 165,355 Q175,365 180,350 Q185,360 190,345 Q195,355 200,340 Q205,355 210,345 Q215,360 220,350 Q225,365 230,355 Q235,370 230,360 Q225,375 220,365 Q215,380 210,375 Q205,385 200,370" fill="url(#peonyGradient)" opacity="0.9"/>
+                                <circle cx="200" cy="355" r="8" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Medium Peony Left -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M140,360 Q135,365 130,355 Q125,362 120,352 Q130,358 135,348 Q140,354 145,344 Q135,350 140,340 Q130,346 135,336" fill="url(#peonyGradient)" opacity="0.8"/>
+                                <circle cx="135" cy="350" r="5" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Medium Peony Right -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M260,360 Q265,365 270,355 Q275,362 280,352 Q270,358 265,348 Q260,354 255,344 Q265,350 260,340 Q270,346 265,336" fill="url(#peonyGradient)" opacity="0.8"/>
+                                <circle cx="265" cy="350" r="5" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M160,350 Q155,355 150,350 Q145,352 140,345 Q150,348 155,342 Q160,345 165,340 Q160,342 155,335 Q150,338 145,332 Q155,335 160,330 Q165,332 170,328 Q160,330 155,325 Q150,328 145,322 Q155,325 160,320" fill="url(#cherryGradient)" opacity="0.85"/>
+                                <circle cx="155" cy="338" r="4" fill="#FFFACD"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M240,350 Q245,355 250,350 Q255,352 260,345 Q250,348 245,342 Q240,345 235,340 Q240,342 235,335 Q240,338 245,332 Q235,335 230,328 Q240,330 235,325 Q250,328 255,322 Q245,325 240,320" fill="url(#cherryGradient)" opacity="0.85"/>
+                                <circle cx="245" cy="338" r="4" fill="#FFFACD"/>
+                            </g>
+                            
+                            <!-- Additional Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M110,330 Q105,335 100,330 Q95,332 90,325 Q100,328 105,322 Q110,325 115,320 Q110,322 105,315 Q100,318 95,312 Q105,315 110,310" fill="url(#cherryGradient)" opacity="0.75"/>
+                                <circle cx="105" cy="322" r="3" fill="#FFFACD"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M290,330 Q295,335 300,330 Q305,332 310,325 Q300,328 295,322 Q290,325 285,320 Q290,322 295,315 Q300,318 305,312 Q295,315 290,310" fill="url(#cherryGradient)" opacity="0.75"/>
+                                <circle cx="295" cy="322" r="3" fill="#FFFACD"/>
+                            </g>
+                            
+                            <!-- Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M130,340 Q125,345 120,335 Q115,340 110,330 Q120,335 125,325 Q130,330 135,320 Q130,325 125,315 Q120,320 115,310 Q125,315 130,305" fill="url(#goldLeafGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M270,340 Q275,345 280,335 Q285,340 290,330 Q280,335 275,325 Q270,330 265,320 Q270,325 275,315 Q280,320 285,310 Q275,315 270,305" fill="url(#goldLeafGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M100,315 Q95,320 90,310 Q85,315 80,305 Q90,310 95,300 Q100,305 105,295 Q100,300 95,290 Q90,295 85,285 Q95,290 100,280" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M300,315 Q305,320 310,310 Q315,315 320,305 Q310,310 305,300 Q300,305 295,295 Q300,300 305,290 Q310,295 315,285 Q305,290 300,280" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            
+                            <!-- Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M170,365 Q165,370 160,360 Q155,365 150,355 Q160,360 165,350 Q170,355 175,345 Q165,350 170,340 Q155,345 160,335" fill="url(#oliveGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M230,365 Q235,370 240,360 Q245,365 250,355 Q240,360 235,350 Q230,355 225,345 Q235,350 230,340 Q245,345 240,335" fill="url(#oliveGradient)" opacity="0.75"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Left Section - Dense Floral Arrangement -->
+                        <g class="floral-left">
+                            <!-- Medium Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M30,200 Q40,190 45,205 Q50,195 55,210 Q60,200 65,215 Q55,205 50,220 Q45,210 40,225 Q35,215 30,230 Q25,220 20,235 Q30,225 35,240" fill="url(#peonyGradient)" opacity="0.85"/>
+                                <circle cx="45" cy="215" r="6" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Small Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M40,160 Q45,155 50,165 Q55,158 60,168 Q50,162 55,172 Q45,166 50,176 Q40,170 45,180" fill="url(#peonyGradient)" opacity="0.75"/>
+                                <circle cx="50" cy="168" r="4" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Small Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M40,240 Q45,245 50,235 Q55,242 60,232 Q50,238 55,228 Q45,234 50,224 Q40,230 45,220" fill="url(#peonyGradient)" opacity="0.75"/>
+                                <circle cx="50" cy="232" r="4" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M80,150 Q70,140 60,155 Q50,145 40,160 Q55,150 65,165 Q75,155 85,170 Q80,160 90,175 Q85,165 95,180 Q90,170 100,185" fill="url(#oliveGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M80,250 Q70,260 60,245 Q50,255 40,240 Q55,250 65,235 Q75,245 85,230 Q80,240 90,225 Q85,235 95,220 Q90,230 100,215" fill="url(#oliveGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M90,120 Q80,110 70,125 Q60,115 50,130 Q70,120 80,135 Q90,125 100,140 Q95,130 105,145 Q100,135 110,150" fill="url(#oliveGradient)" opacity="0.7"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M90,280 Q80,290 70,275 Q60,285 50,270 Q70,280 80,265 Q90,275 100,260 Q95,270 105,255 Q100,265 110,250" fill="url(#oliveGradient)" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M50,130 Q45,125 40,130 Q35,128 30,135 Q40,132 45,138 Q50,135 55,140 Q50,138 45,145 Q40,142 35,148 Q45,145 50,150" fill="url(#cherryGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M50,270 Q45,275 40,270 Q35,272 30,265 Q40,268 45,262 Q50,265 55,260 Q50,262 45,255 Q40,258 35,252 Q45,255 50,250" fill="url(#cherryGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M70,100 Q65,95 60,100 Q55,98 50,105 Q60,102 65,108 Q70,105 75,110 Q70,108 65,115 Q60,112 55,118 Q65,115 70,120" fill="url(#cherryGradient)" opacity="0.7"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M70,300 Q65,305 60,300 Q55,302 50,295 Q60,298 65,292 Q70,295 75,290 Q70,292 65,285 Q60,288 55,282 Q65,285 70,280" fill="url(#cherryGradient)" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Golden Berries -->
+                            <circle cx="70" cy="160" r="6" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="65" cy="175" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="75" cy="190" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="70" cy="240" r="6" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="65" cy="225" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="75" cy="210" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            
+                            <!-- Additional Golden Berries -->
+                            <circle cx="55" cy="140" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="60" cy="155" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="55" cy="260" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="60" cy="245" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            
+                            <!-- Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M95,145 Q90,140 85,150 Q80,145 75,155 Q85,150 90,160 Q95,155 100,165 Q90,160 95,170 Q85,165 90,175" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M95,255 Q90,260 85,250 Q80,255 75,245 Q85,250 90,240 Q95,245 100,235 Q90,240 95,230 Q85,235 90,225" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Right Section - Dense Floral Arrangement -->
+                        <g class="floral-right">
+                            <!-- Medium Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M370,200 Q360,190 355,205 Q350,195 345,210 Q340,200 335,215 Q345,205 350,220 Q355,210 360,225 Q365,215 370,230 Q375,220 380,235 Q370,225 365,240" fill="url(#peonyGradient)" opacity="0.85"/>
+                                <circle cx="355" cy="215" r="6" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Small Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M360,160 Q355,155 350,165 Q345,158 340,168 Q350,162 355,172 Q365,166 360,176 Q370,170 365,180" fill="url(#peonyGradient)" opacity="0.75"/>
+                                <circle cx="350" cy="168" r="4" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Additional Small Peony -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M360,240 Q355,245 350,235 Q345,242 340,232 Q350,238 355,228 Q365,234 360,224 Q370,230 365,220" fill="url(#peonyGradient)" opacity="0.75"/>
+                                <circle cx="350" cy="232" r="4" fill="#FFD700" filter="url(#glowEffect)"/>
+                            </g>
+                            
+                            <!-- Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M320,150 Q330,140 340,155 Q350,145 360,160 Q345,150 335,165 Q325,155 315,170 Q320,160 310,175 Q315,165 305,180 Q310,170 300,185" fill="url(#oliveGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M320,250 Q330,260 340,245 Q350,255 360,240 Q345,250 335,235 Q325,245 315,230 Q320,240 310,225 Q315,235 305,220 Q310,230 300,215" fill="url(#oliveGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Olive Branches -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M310,120 Q320,110 330,125 Q340,115 350,130 Q330,120 320,135 Q310,125 300,140 Q305,130 295,145 Q300,135 290,150" fill="url(#oliveGradient)" opacity="0.7"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M310,280 Q320,290 330,275 Q340,285 350,270 Q330,280 320,265 Q310,275 300,260 Q305,270 295,255 Q300,265 290,250" fill="url(#oliveGradient)" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M350,130 Q355,125 360,130 Q365,128 370,135 Q360,132 355,138 Q350,135 345,140 Q350,138 355,145 Q360,142 365,148 Q355,145 350,150" fill="url(#cherryGradient)" opacity="0.8"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M350,270 Q355,275 360,270 Q365,272 370,265 Q360,268 355,262 Q350,265 345,260 Q350,262 355,255 Q360,258 365,252 Q355,255 350,250" fill="url(#cherryGradient)" opacity="0.8"/>
+                            </g>
+                            
+                            <!-- Additional Cherry Blossoms -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M330,100 Q335,95 340,100 Q345,98 350,105 Q340,102 335,108 Q330,105 325,110 Q330,108 335,115 Q340,112 345,118 Q335,115 330,120" fill="url(#cherryGradient)" opacity="0.7"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M330,300 Q335,305 340,300 Q345,302 350,295 Q340,298 335,292 Q330,295 325,290 Q330,292 335,285 Q340,288 345,282 Q335,285 330,280" fill="url(#cherryGradient)" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Golden Berries -->
+                            <circle cx="330" cy="160" r="6" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="335" cy="175" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="325" cy="190" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="330" cy="240" r="6" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="335" cy="225" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="325" cy="210" r="5" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            
+                            <!-- Additional Golden Berries -->
+                            <circle cx="345" cy="140" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="340" cy="155" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="345" cy="260" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            <circle cx="340" cy="245" r="4" fill="url(#berryGradient)" filter="url(#shadow3d)"/>
+                            
+                            <!-- Gold Leaves -->
+                            <g filter="url(#shadow3d)">
+                                <path d="M305,145 Q310,140 315,150 Q320,145 325,155 Q315,150 310,160 Q305,155 300,165 Q310,160 305,170 Q315,165 310,175" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                            <g filter="url(#shadow3d)">
+                                <path d="M305,255 Q310,260 315,250 Q320,255 325,245 Q315,250 310,240 Q305,245 300,235 Q310,240 305,230 Q315,235 310,225" fill="url(#goldLeafGradient)" opacity="0.75"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Additional Small Flowers for Density -->
+                        <g class="small-flowers">
+                            <circle cx="120" cy="80" r="5" fill="#FFFAF0" opacity="0.9" filter="url(#shadow3d)"/>
+                            <circle cx="280" cy="80" r="5" fill="#FFFAF0" opacity="0.9" filter="url(#shadow3d)"/>
+                            <circle cx="120" cy="320" r="5" fill="#FFFAF0" opacity="0.9" filter="url(#shadow3d)"/>
+                            <circle cx="280" cy="320" r="5" fill="#FFFAF0" opacity="0.9" filter="url(#shadow3d)"/>
+                            <circle cx="80" cy="200" r="4" fill="#FFFAF0" opacity="0.85" filter="url(#shadow3d)"/>
+                            <circle cx="320" cy="200" r="4" fill="#FFFAF0" opacity="0.85" filter="url(#shadow3d)"/>
+                            <circle cx="200" cy="80" r="4" fill="#FFFAF0" opacity="0.85" filter="url(#shadow3d)"/>
+                            <circle cx="200" cy="320" r="4" fill="#FFFAF0" opacity="0.85" filter="url(#shadow3d)"/>
+                            <!-- Additional small flowers -->
+                            <circle cx="95" cy="115" r="3" fill="#FFFAF0" opacity="0.8" filter="url(#shadow3d)"/>
+                            <circle cx="305" cy="115" r="3" fill="#FFFAF0" opacity="0.8" filter="url(#shadow3d)"/>
+                            <circle cx="95" cy="285" r="3" fill="#FFFAF0" opacity="0.8" filter="url(#shadow3d)"/>
+                            <circle cx="305" cy="285" r="3" fill="#FFFAF0" opacity="0.8" filter="url(#shadow3d)"/>
+                            <circle cx="145" cy="95" r="3" fill="#FFFAF0" opacity="0.75" filter="url(#shadow3d)"/>
+                            <circle cx="255" cy="95" r="3" fill="#FFFAF0" opacity="0.75" filter="url(#shadow3d)"/>
+                            <circle cx="145" cy="305" r="3" fill="#FFFAF0" opacity="0.75" filter="url(#shadow3d)"/>
+                            <circle cx="255" cy="305" r="3" fill="#FFFAF0" opacity="0.75" filter="url(#shadow3d)"/>
+                        </g>
+                        
+                        <!-- Tiny Vines for Detail -->
+                        <g class="tiny-vines">
+                            <path d="M100,100 Q150,80 200,60" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M300,100 Q250,80 200,60" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M100,300 Q150,320 200,340" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M300,300 Q250,320 200,340" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M60,200 Q80,150 100,100" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M340,200 Q320,150 300,100" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M60,200 Q80,250 100,300" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M340,200 Q320,250 300,300" fill="none" stroke="#6B8E23" stroke-width="1.5" opacity="0.5"/>
+                            <!-- Additional curved vines -->
+                            <path d="M80,130 Q120,100 160,80" fill="none" stroke="#8B9A6B" stroke-width="1" opacity="0.4"/>
+                            <path d="M320,130 Q280,100 240,80" fill="none" stroke="#8B9A6B" stroke-width="1" opacity="0.4"/>
+                            <path d="M80,270 Q120,300 160,320" fill="none" stroke="#8B9A6B" stroke-width="1" opacity="0.4"/>
+                            <path d="M320,270 Q280,300 240,320" fill="none" stroke="#8B9A6B" stroke-width="1" opacity="0.4"/>
+                            <path d="M130,70 Q160,60 190,55" fill="none" stroke="#5A7C59" stroke-width="1" opacity="0.35"/>
+                            <path d="M270,70 Q240,60 210,55" fill="none" stroke="#5A7C59" stroke-width="1" opacity="0.35"/>
+                            <path d="M130,330 Q160,340 190,345" fill="none" stroke="#5A7C59" stroke-width="1" opacity="0.35"/>
+                            <path d="M270,330 Q240,340 210,345" fill="none" stroke="#5A7C59" stroke-width="1" opacity="0.35"/>
+                        </g>
+                        
+                        <!-- Gold Decorative Elements -->
+                        <g class="gold-decorations">
+                            <circle cx="150" cy="50" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="250" cy="50" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="150" cy="350" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="250" cy="350" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="50" cy="150" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="50" cy="250" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="350" cy="150" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <circle cx="350" cy="250" r="3" fill="#C9A227" filter="url(#glowEffect)"/>
+                            <!-- Additional gold decorations -->
+                            <circle cx="100" cy="100" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="300" cy="100" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="100" cy="300" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="300" cy="300" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="175" cy="65" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="225" cy="65" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="175" cy="335" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                            <circle cx="225" cy="335" r="2" fill="#DAA520" filter="url(#glowEffect)"/>
+                        </g>
+                    </svg>
+                </div>
+                
+                <!-- Main Badge -->
+                <div class="badge">
+                    <div class="badge-inner">
+                        <!-- Book Icon -->
+                        <div class="book-icon">
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="bookGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FFD700"/>
+                                        <stop offset="50%" style="stop-color:#FFA500"/>
+                                        <stop offset="100%" style="stop-color:#FFD700"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M8 16 L32 8 L56 16 L56 48 L32 40 L8 48 Z" fill="url(#bookGold)" stroke="#B8860B" stroke-width="1.5"/>
+                                <path d="M32 8 L32 40" stroke="#B8860B" stroke-width="1.5"/>
+                                <path d="M8 16 L32 24 L56 16" stroke="#B8860B" stroke-width="1" fill="none"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Main Text Content -->
+                        <div class="badge-content">
+                            <!-- Text-Specific Glow Effect -->
+                            <div class="text-glow-container">
+                                <div class="text-core-glow"></div>
+                                <div class="text-god-rays"></div>
+                                <div class="text-bloom"></div>
+                            </div>
+                            
+                            <h1 class="title-malay">Selamat Hari Guru</h1>
+                            <h2 class="title-chinese">教师节快乐</h2>
+                            <h3 class="title-english">Happy Teachers' Day</h3>
+                            <div class="heart-icon">❤</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Golden Reflection -->
+                <div class="golden-reflection"></div>
+                
+                <!-- Teacher Names Container -->
+                <div class="teacher-names-container" id="namesContainer">
+                    <a href="#" class="teacher-name-card" data-name="Cikgu RIZAN">
+                        <span class="teacher-name">Cikgu RIZAN</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="詹晋沣老师">
+                        <span class="teacher-name">詹晋沣老师</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="林淑娟老师">
+                        <span class="teacher-name">林淑娟老师</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="Mrs. Vatsala">
+                        <span class="teacher-name">Mrs. Vatsala</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="黄荣副老师">
+                        <span class="teacher-name">黄荣副老师</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="林素铭老师">
+                        <span class="teacher-name">林素铭老师</span>
+                    </a>
+                    <a href="#" class="teacher-name-card" data-name="许雍敏老师">
+                        <span class="teacher-name">许雍敏老师</span>
+                    </a>
+                </div>
+            </div>
+        
+        <!-- Bottom Instruction Card -->
+        <section class="instruction-section">
+            <div class="instruction-card glassmorphism">
+                <p class="instruction-text-malay">Klik pada nama guru yang sedang bercahaya untuk memasuki laman khas Hari Guru mereka.</p>
+                <p class="instruction-text-english">Click on the glowing teacher's name to enter their personal Teachers' Day website.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
