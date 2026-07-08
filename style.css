@@ -1749,3 +1749,331 @@ body {
         -webkit-text-fill-color: var(--ivory-white);
     }
 }
+
+/* ============================================
+   Tablet Optimization (769px - 1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Central Badge */
+    .badge {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .badge-inner {
+        width: 260px;
+        height: 260px;
+    }
+    
+    /* Teacher Name Cards */
+    .teacher-name {
+        font-size: 23px;
+    }
+    
+    .teacher-name-card {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    /* Reduced Glow Effects */
+    .teacher-name-card:hover {
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+    }
+    
+    .teacher-name-card.visible {
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+    }
+    
+    /* Reduced Padding/Margin */
+    .instruction-card {
+        padding: 1.5rem 2rem;
+        margin: 1.5rem auto;
+    }
+    
+    /* Teacher Profile Pages - Two Column Layout */
+    .teacher-profile {
+        padding: 1.5rem;
+    }
+    
+    .profile-card {
+        max-width: 700px;
+        padding: 2rem;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .profile-name {
+        font-size: 2.5rem;
+    }
+    
+    .profile-title {
+        font-size: 1.1rem;
+    }
+    
+    .profile-message {
+        font-size: 1rem;
+    }
+    
+    .profile-quote {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+    }
+    
+    /* Message Wall */
+    .message-wall {
+        padding: 1.5rem;
+    }
+    
+    .message-wall-title {
+        font-size: 1.3rem;
+    }
+    
+    /* Reduced Backdrop Filter */
+    .question-modal {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    /* Reduced Box Shadows */
+    .modal-content {
+        box-shadow:
+            0 15px 50px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(255, 215, 0, 0.2);
+    }
+}
+
+/* ============================================
+   Mobile Optimization (max-width: 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Central Badge */
+    .badge {
+        width: 210px;
+        height: 210px;
+    }
+    
+    .badge-inner {
+        width: 190px;
+        height: 190px;
+    }
+    
+    /* Teacher Name Cards */
+    .teacher-name {
+        font-size: 19px;
+    }
+    
+    .teacher-name-card {
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Greatly Reduced Glow Effects */
+    .teacher-name-card:hover {
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
+    }
+    
+    .teacher-name-card.visible {
+        box-shadow: 0 3px 12px rgba(255, 215, 0, 0.12);
+    }
+    
+    /* Remove Backdrop Filter for Performance */
+    .question-modal {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(0, 0, 0, 0.85);
+    }
+    
+    .modal-content {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(26, 26, 46, 0.95);
+    }
+    
+    /* Simplified Box Shadows */
+    .modal-content {
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Reduced Padding/Margin */
+    .instruction-card {
+        padding: 1rem 1.5rem;
+        margin: 1rem auto;
+        max-width: 90%;
+    }
+    
+    .instruction-text-malay,
+    .instruction-text-english {
+        font-size: 0.95rem;
+    }
+    
+    /* Teacher Profile Pages - Single Column Layout */
+    .teacher-profile {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .profile-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+        border-width: 3px;
+    }
+    
+    .profile-name {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .profile-title {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-message {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-quote {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-left-width: 2px;
+    }
+    
+    .back-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Message Wall - Mobile Optimized */
+    .message-wall {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 15px;
+    }
+    
+    .message-wall-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .message-wall-content {
+        max-height: 300px;
+    }
+    
+    .message-item {
+        padding: 0.8rem 1rem;
+        border-left-width: 2px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .message-sender {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .message-text {
+        font-size: 0.9rem;
+    }
+    
+    /* View More Button */
+    .view-more-button {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1rem;
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 10px;
+        color: var(--gold-primary);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+    }
+    
+    .view-more-button:hover {
+        background: rgba(255, 215, 0, 0.2);
+    }
+    
+    /* Hide Extra Messages Initially */
+    .message-item.hidden-message {
+        display: none;
+    }
+    
+    /* Reduced Decorative Elements */
+    .decorative-star {
+        font-size: 1.5rem;
+    }
+    
+    /* Simplified Animations */
+    @keyframes profileFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    
+    @keyframes avatarGlow {
+        0%, 100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+        50% { box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); }
+    }
+    
+    @keyframes buttonPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+    
+    /* Modal Mobile Optimization */
+    .modal-content {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-body p {
+        font-size: 1rem;
+    }
+    
+    .modal-input {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .modal-buttons {
+        gap: 0.8rem;
+    }
+    
+    .submit-button,
+    .cancel-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Use Opacity Instead of Blur for Performance */
+    .background-container > * {
+        opacity: 0.7;
+    }
+}

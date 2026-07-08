@@ -200,6 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initTeacherCardClickHandlers();
 });
 
+// Function to get particle count based on screen size
+function getParticleCount(desktopCount, tabletCount, mobileCount) {
+    const width = window.innerWidth;
+    if (width <= 768) return mobileCount;
+    if (width <= 1024) return tabletCount;
+    return desktopCount;
+}
+
 /* ============================================
    Bokeh Effect Generator
    ============================================ */
@@ -207,27 +215,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function initBokehEffect() {
     const bokehContainer = document.getElementById('bokehContainer');
     if (!bokehContainer) return;
-    
-    const bokehCount = 8;
+
+    const bokehCount = getParticleCount(8, 5, 3);
     const container = bokehContainer;
-    
+
     for (let i = 0; i < bokehCount; i++) {
         const bokeh = document.createElement('div');
         bokeh.className = 'bokeh';
-        
+
         // Random size
         const size = Math.random() * 100 + 50;
         bokeh.style.width = `${size}px`;
         bokeh.style.height = `${size}px`;
-        
+
         // Random position
         bokeh.style.left = `${Math.random() * 100}%`;
         bokeh.style.top = `${Math.random() * 100}%`;
-        
+
         // Random animation delay
         bokeh.style.animationDelay = `${Math.random() * 20}s`;
         bokeh.style.animationDuration = `${15 + Math.random() * 10}s`;
-        
+
         container.appendChild(bokeh);
     }
 }
@@ -239,10 +247,10 @@ function initBokehEffect() {
 function initGoldenDust() {
     const goldenDust = document.getElementById('goldenDust');
     if (!goldenDust) return;
-    
-    const dustCount = 25;
+
+    const dustCount = getParticleCount(25, 15, 8);
     const container = goldenDust;
-    
+
     for (let i = 0; i < dustCount; i++) {
         const dust = document.createElement('div');
         dust.className = 'dust-particle';
@@ -266,10 +274,10 @@ function initGoldenDust() {
 function initParticles() {
     const particlesContainer = document.getElementById('particlesContainer');
     if (!particlesContainer) return;
-    
-    const particleCount = 10;
+
+    const particleCount = getParticleCount(10, 6, 4);
     const container = particlesContainer;
-    
+
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -298,10 +306,10 @@ function initParticles() {
 function initSparkles() {
     const sparklesContainer = document.getElementById('sparklesContainer');
     if (!sparklesContainer) return;
-    
-    const sparkleCount = 12;
+
+    const sparkleCount = getParticleCount(12, 8, 5);
     const container = sparklesContainer;
-    
+
     for (let i = 0; i < sparkleCount; i++) {
         const sparkle = document.createElement('div');
         sparkle.className = 'sparkle';
