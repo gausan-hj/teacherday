@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Screenshot images (large binaries, not needed for deployment)
+screenshot-*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

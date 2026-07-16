@@ -9,13 +9,34 @@ const teachers = [
     { name: "詹晋沣老师", color: "#2196F3", question: "真空中的光速是多少 m/s？", answer: "300000000", url: "teacher/zhan-jinfeng.html", lang: "chinese" },
     { name: "林淑娟老师", color: "#F44336", question: "π 的前两位小数是多少？", answer: "3.14", url: "teacher/lin-shujuan.html", lang: "chinese" },
     { name: "Mrs. Vatsala", color: "#000000", question: "How many letters are there in the English alphabet?", answer: "26", url: "teacher/mrs-vatsala.html", lang: "english" },
-    { name: "黄荣副老师", color: "#FF9800", question: "10² = ?", answer: "100", url: "teacher/huang-rongfu.html", lang: "chinese" },
+    { name: "黄荣富老师", color: "#FF9800", question: "10² = ?", answer: "100", url: "teacher/huang-rongfu.html", lang: "chinese" },
     { name: "林素铭老师", color: "#00A0E9", question: "马来西亚独立于哪一年？", answer: "1957", url: "teacher/lin-suming.html", lang: "chinese" },
-    { name: "许雍敏老师", color: "#C8A2FF", question: "三原色共有几种？", answer: "3", url: "teacher/teacher-linda.html", lang: "chinese" }
+    { name: "许雍敏老师", color: "#C8A2FF", question: "三原色共有几种？", answer: "3", url: "teacher/teacher-linda.html", lang: "chinese" },
+    { name: "蔡礼懃老师", color: "#D946EF", question: "联合国第11个可持续发展目标是什么？", answer: "可持续城市和社区", url: "teacher/cai-liken.html", lang: "chinese" },
+    { name: "林家祺老师", color: "#1a1a1a", question: "联合国第12个可持续发展目标是什么？", answer: "负责任消费和生产", url: "teacher/lin-jiaqi.html", lang: "chinese" },
+    { name: "Mrs. Pavithra", color: "#009688", question: "What is the past tense of 'write'?", answer: "wrote", url: "teacher/mrs-pavithra.html", lang: "english" },
+    { name: "张佳玲", color: "#EC4899", question: "Komputer memerlukan apa untuk berfungsi?", answer: "kuasa", url: "teacher/zhang-jialing.html", lang: "malay" },
+    { name: "黄慧婷", color: "#06B6D4", question: "汉字有多少个基本笔画？", answer: "8", url: "teacher/huang-huiting.html", lang: "chinese" },
+    { name: "婧雯老师", color: "#9C27B0", question: "课业辅导的主要目的是什么？", answer: "帮助学生提高学业成绩", url: "teacher/jing-wen.html", lang: "chinese" },
+    { name: "孙庆龄老师", color: "#2196F3", question: "课业辅导对学生有什么帮助？", answer: "提高学习能力和成绩", url: "teacher/sun-qingling.html", lang: "chinese" },
+    { name: "Mrs. Subatra", color: "#F44336", question: "What is the past tense of 'go'?", answer: "went", url: "teacher/mrs-subatra.html", lang: "english" },
+    { name: "崔家琪老师", color: "#2196F3", question: "生物科学主要研究什么？", answer: "生命现象和生物活动规律", url: "teacher/cui-jiaqi.html", lang: "chinese" },
+    { name: "尤雪慧老师", color: "#2196F3", question: "电脑的基本组成部分有哪些？", answer: "硬件和软件", url: "teacher/you-xuehui.html", lang: "chinese" },
+    { name: "洪星宇老师", color: "#808080", question: "夏威夷装饰有什么特色？", answer: "热带风情和自然元素", url: "teacher/hong-xingyu.html", lang: "chinese" },
+    { name: "符丽娜老师", color: "#FFFFFF", question: "华文学习的重要性是什么？", answer: "传承中华文化", url: "teacher/fu-lina.html", lang: "chinese" },
+    { name: "林亚鸾老师", color: "#FF8C00", question: "经济学研究的核心是什么？", answer: "资源分配", url: "teacher/lin-yalian.html", lang: "chinese" },
+    { name: "黄爱玲老师", color: "#BA68C8", question: "班长带是什么颜色的？", answer: "紫色", url: "teacher/huang-ailing.html", lang: "chinese" },
+    { name: "杜静颖老师", color: "#9B59B6", question: "学长带是什么颜色的？", answer: "蓝色/红色", url: "teacher/du-jingying.html", lang: "chinese" },
+    { name: "罗凯欣老师", color: "#FFC107", question: "华文老师上课最喜欢穿什么颜色的衣服？", answer: "黄色", url: "teacher/luo-kaixin.html", lang: "chinese" }
 ];
 
 // Fuzzy matching function for answer validation
-const normalize = text => text.toLowerCase().replace(/\s/g, "").replace(/[^\w\u4e00-\u9fa5]/g, "");
+const normalize = text => text.toLowerCase()
+    .replace(/\s/g, "")
+    .replace(/[^\w\u4e00-\u9fa5]/g, "")
+    .replace(/与/g, "和")
+    .replace(/及/g, "和")
+    .replace(/之/g, "的");
 
 function checkAnswer(userAnswer, correctAnswer) {
     return normalize(userAnswer).includes(normalize(correctAnswer));
@@ -32,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallaxEffect();
     initIntersectionObserver();
     initQuestionModal();
+    initTeacherModeToggle();
 });
 
 /* ============================================
@@ -335,6 +357,9 @@ function initSparkles() {
    Teacher Name Animation System - Performance Optimized
    ============================================ */
 
+let randomAppearanceTimeout = null;
+let teacherMovementTimeout = null;
+
 function initTeacherNameAnimation() {
     // Cache DOM elements
     const nameCards = document.querySelectorAll('.teacher-name-card');
@@ -536,7 +561,7 @@ function initTeacherNameAnimation() {
         });
         
         const cycleDelay = 4000 + Math.random() * 2000;
-        setTimeout(startRandomAppearanceCycle, cycleDelay);
+        randomAppearanceTimeout = setTimeout(startRandomAppearanceCycle, cycleDelay);
     }
     
     setTimeout(startRandomAppearanceCycle, 1000);
@@ -551,13 +576,13 @@ function initTeacherNameAnimation() {
     // Lower frequency teacher movement - only 1-2 teachers every 3-5 seconds
     function scheduleTeacherMovement() {
         if (!isPageVisible) {
-            setTimeout(scheduleTeacherMovement, 5000);
+            teacherMovementTimeout = setTimeout(scheduleTeacherMovement, 5000);
             return;
         }
         
         const visibleTeachers = cardStates.filter(s => s.isVisible && s.isGlowing);
         if (visibleTeachers.length === 0) {
-            setTimeout(scheduleTeacherMovement, 3000);
+            teacherMovementTimeout = setTimeout(scheduleTeacherMovement, 3000);
             return;
         }
         
@@ -603,7 +628,7 @@ function initTeacherNameAnimation() {
         });
         
         // Schedule next movement in 3-5 seconds
-        setTimeout(scheduleTeacherMovement, 3000 + Math.random() * 2000);
+        teacherMovementTimeout = setTimeout(scheduleTeacherMovement, 3000 + Math.random() * 2000);
     }
     
     // Animate card using transform only (no layout thrashing)
@@ -831,6 +856,100 @@ document.querySelectorAll('.teacher-name-card').forEach(card => {
         }
     });
 });
+
+/* ============================================
+   Teacher Mode Toggle
+   ============================================ */
+
+let isTeacherMode = false;
+let mouseFollowAnimationId = null;
+
+function initTeacherModeToggle() {
+    const toggleButton = document.getElementById('teacherModeToggle');
+    const namesContainer = document.getElementById('namesContainer');
+    const badgeContainer = document.querySelector('.badge-container');
+    
+    if (!toggleButton || !namesContainer || !badgeContainer) return;
+    
+    toggleButton.addEventListener('click', () => {
+        isTeacherMode = !isTeacherMode;
+        
+        if (isTeacherMode) {
+            // Enable teacher mode
+            toggleButton.classList.add('active');
+            toggleButton.querySelector('.toggle-text').textContent = '退出老师模式';
+            namesContainer.classList.add('teacher-mode');
+            badgeContainer.classList.add('teacher-mode');
+            
+            // Check if device supports mouse (not mobile/tablet)
+            if (window.innerWidth > 1024) {
+                namesContainer.classList.add('mouse-follow');
+                startMouseFollowEffect();
+            }
+        } else {
+            // Disable teacher mode
+            toggleButton.classList.remove('active');
+            toggleButton.querySelector('.toggle-text').textContent = '老师专用入口';
+            namesContainer.classList.remove('teacher-mode');
+            namesContainer.classList.remove('mouse-follow');
+            badgeContainer.classList.remove('teacher-mode');
+            
+            // Stop mouse follow effect
+            stopMouseFollowEffect();
+            
+            // Reinitialize teacher name animation
+            setTimeout(() => {
+                initTeacherNameAnimation();
+            }, 500);
+        }
+    });
+}
+
+function startMouseFollowEffect() {
+    document.addEventListener('mousemove', handleMouseMoveForTeacherMode);
+}
+
+function stopMouseFollowEffect() {
+    document.removeEventListener('mousemove', handleMouseMoveForTeacherMode);
+    if (mouseFollowAnimationId) {
+        cancelAnimationFrame(mouseFollowAnimationId);
+        mouseFollowAnimationId = null;
+    }
+    
+    // Reset transform
+    const namesContainer = document.getElementById('namesContainer');
+    if (namesContainer) {
+        namesContainer.style.transform = 'translate(0, 0)';
+    }
+}
+
+function handleMouseMoveForTeacherMode(e) {
+    const namesContainer = document.getElementById('namesContainer');
+    if (!namesContainer || !isTeacherMode || window.innerWidth <= 1024) return;
+    
+    // Smooth follow with requestAnimationFrame
+    if (mouseFollowAnimationId) {
+        cancelAnimationFrame(mouseFollowAnimationId);
+    }
+    
+    mouseFollowAnimationId = requestAnimationFrame(() => {
+        const containerRect = namesContainer.getBoundingClientRect();
+        const containerCenterX = containerRect.left + containerRect.width / 2;
+        const containerCenterY = containerRect.top + containerRect.height / 2;
+        
+        // Calculate offset from center
+        const offsetX = e.clientX - containerCenterX;
+        const offsetY = e.clientY - containerCenterY;
+        
+        // Limit maximum offset to 25px
+        const maxOffset = 25;
+        const limitedOffsetX = Math.max(-maxOffset, Math.min(maxOffset, offsetX * 0.1));
+        const limitedOffsetY = Math.max(-maxOffset, Math.min(maxOffset, offsetY * 0.1));
+        
+        // Apply transform
+        namesContainer.style.transform = `translate(${limitedOffsetX}px, ${limitedOffsetY}px)`;
+    });
+}
 
 /* ============================================
    Console Message for Developers

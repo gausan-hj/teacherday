@@ -2077,3 +2077,137 @@ body {
         opacity: 0.7;
     }
 }
+
+/* ============================================
+   Teacher Mode Toggle Button
+   ============================================ */
+
+.teacher-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
+    border: 2px solid var(--gold-tertiary);
+    border-radius: 50px;
+    color: var(--navy-blue);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    transition: var(--transition-smooth);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.teacher-mode-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+}
+
+.teacher-mode-toggle.active {
+    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold-primary) 100%);
+    color: white;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+}
+
+.toggle-text {
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   Teacher Mode - Grid Layout
+   ============================================ */
+
+.teacher-names-container.teacher-mode {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+    transition: transform 0.3s ease-out;
+}
+
+.teacher-names-container.teacher-mode .teacher-name-card {
+    position: relative !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    left: auto !important;
+    top: auto !important;
+    animation: none !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.teacher-names-container.teacher-mode .teacher-name-card:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Badge and wreath in teacher mode */
+.badge-container.teacher-mode .badge {
+    opacity: 0.3;
+    transform: scale(0.5);
+    transition: all 0.5s ease-out;
+}
+
+.badge-container.teacher-mode .wreath {
+    opacity: 0.5;
+    transform: scale(0.6);
+    transition: all 0.5s ease-out;
+}
+
+/* ============================================
+   Responsive Design for Teacher Mode
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .teacher-names-container.teacher-mode {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-mode-toggle {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .teacher-names-container.teacher-mode {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        gap: 1rem;
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .teacher-names-container.teacher-mode .teacher-name-card {
+        max-width: 150px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Disable mouse follow effect on mobile/tablet */
+@media (max-width: 1024px) {
+    .teacher-names-container.teacher-mode.mouse-follow {
+        transform: none !important;
+    }
+}
