@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -186,9 +186,78 @@
                 "Those who cannot remember the past are condemned to repeat it."
             </div>
             <a href="../index.html" class="back-button">← Back to Celebration</a>
-        </div>
-    </main>
+            </div>
+
+            <!-- ABCD Quiz Section -->
+            <div class="quiz-section" id="quizSection" style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,215,0,0.2); text-align: left;">
+                <h3 class="quiz-title" style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; text-align: center; letter-spacing: 2px;">Knowledge Challenge</h3>
+                <p class="quiz-question" id="quizQuestion" style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,240,0.95); margin-bottom: 1rem; line-height: 1.6;"></p>
+                <div class="quiz-options" id="quizOptions" style="display: flex; flex-direction: column; gap: 0.6rem;"></div>
+                <p class="quiz-error" id="quizError" style="color: #ff6b6b; font-size: 0.95rem; margin-top: 0.8rem; display: none; text-align: center;"></p>
+                <button class="quiz-submit-btn" id="quizSubmitBtn" style="display: block; margin: 1rem auto 0; padding: 0.8rem 2.5rem; background: linear-gradient(135deg, var(--gold-primary, #FFD700), var(--gold-secondary, #DAA520)); color: var(--navy-blue, #1a1a2e); border: none; border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(255,215,0,0.3); transition: all 0.3s ease;">Submit Answer</button>
+            </div>
+
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">Student Messages</h3>
+                <div class="message-wall-content" id="messageWallContent"></div>
+                <div class="message-form" style="margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;">
+                    <input type="text" name="sender" class="message-form-input" placeholder="Your name..." style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,215,0,0.2);border-radius:10px;color:white;font-family:'Cormorant Garamond',serif;font-size:0.95rem;outline:none;">
+                    <textarea name="text" class="message-form-input" rows="3" placeholder="Write your blessing..." style="padding:0.6rem 0.8rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,215,0,0.2);border-radius:10px;color:white;font-family:'Cormorant Garamond',serif;font-size:0.95rem;outline:none;resize:vertical;"></textarea>
+                    <button class="message-send-btn" type="button" style="padding:0.6rem 1.5rem;background:linear-gradient(135deg,var(--gold-primary),var(--gold-secondary));color:var(--navy-blue);border:none;border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:600;cursor:pointer;align-self:flex-end;">Submit</button>
+                </div>
+            </main>
     
     <script src="../script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const wallContent = document.getElementById('messageWallContent');
+        if (!wallContent) return;
+        const teacherNameEl = document.querySelector('.profile-name');
+        const teacherName = teacherNameEl ? teacherNameEl.textContent : 'unknown';
+        const storageKey = 'td_messages_' + teacherName.trim().replace(/\s/g, '_');
+
+        let messages = [];
+        try { messages = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch(e) {}
+
+        if (messages.length === 0) {
+            messages = [
+                { sender: 'Student A', text: 'Thank you ' + teacherName + ' for everything! Happy Teachers Day!' },
+                { sender: 'Student B', text: 'Your dedication inspires us every day.' },
+                { sender: 'Student C', text: 'You are the best teacher! We love you!' }
+            ];
+            localStorage.setItem(storageKey, JSON.stringify(messages));
+        }
+
+        messages.forEach(function(m) {
+            const item = document.createElement('div');
+            item.className = 'message-item';
+            item.innerHTML = '<p class="message-sender">' + m.sender + '</p><p class="message-text">' + m.text + '</p>';
+            wallContent.appendChild(item);
+        });
+
+        const sendBtn = document.querySelector('.message-send-btn');
+        if (sendBtn) {
+            sendBtn.addEventListener('click', function() {
+                const senderInput = document.querySelector('[name="sender"]');
+                const textInput = document.querySelector('[name="text"]');
+                const sender = senderInput ? senderInput.value.trim() : 'Anonymous';
+                const text = textInput ? textInput.value.trim() : '';
+                if (!text) return;
+                messages.push({ sender: sender, text: text });
+                localStorage.setItem(storageKey, JSON.stringify(messages));
+                const item = document.createElement('div');
+                item.className = 'message-item';
+                item.style.animation = 'messageFadeIn 0.5s ease-out';
+                item.innerHTML = '<p class="message-sender">' + sender + '</p><p class="message-text">' + text + '</p>';
+                wallContent.appendChild(item);
+                wallContent.scrollTop = wallContent.scrollHeight;
+                if (textInput) textInput.value = '';
+                if (senderInput) senderInput.value = '';
+            });
+        }
+    });
+    </script>
 </body>
 </html>
