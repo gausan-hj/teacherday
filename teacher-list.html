@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师列表 | Teacher List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-container">
+        <div class="golden-gradient"></div>
+        <div class="soft-glow"></div>
+    </div>
+
+    <main class="teacher-grid-page">
+        <div class="grid-header">
+            <a href="../index.html" class="grid-back-btn">← Back / 返回首页</a>
+            <h1>🎓 教师名单 Teachers</h1>
+            <p>选择一位老师，开始知识挑战</p>
+            <input type="text" class="grid-search" id="gridSearch" placeholder="搜索老师名字... / Search teachers...">
+        </div>
+        <div class="teacher-grid" id="teacherGrid"></div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+    function renderTeacherGrid(filter = '') {
+        const grid = document.getElementById('teacherGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        const lower = filter.toLowerCase();
+        teachers.forEach((t, i) => {
+            if (filter && !t.name.toLowerCase().includes(lower)) return;
+            const card = document.createElement('div');
+            card.className = 'grid-teacher-card';
+            card.style.setProperty('--tc-color', t.color);
+            card.style.animationDelay = (i * 0.05) + 's';
+            card.innerHTML = `
+                <div class="grid-avatar">${t.icon || '👨‍🏫'}</div>
+                <div class="grid-name">${t.name}</div>
+                <div class="grid-subject">${t.subject || ''}</div>
+            `;
+            card.addEventListener('click', () => window.showQuestionModal(t));
+            grid.appendChild(card);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTeacherGrid();
+        const searchInput = document.getElementById('gridSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', e => renderTeacherGrid(e.target.value.trim()));
+        }
+    });
+    </script>
+</body>
+</html>
