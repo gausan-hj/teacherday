@@ -9,28 +9,28 @@ const teachers = [
     { name: "詹晋沣老师", color: "#2196F3", question: "真空中的光速大约是多少 m/s？", options: ["A. 3×10⁶ m/s", "B. 3×10⁸ m/s", "C. 3×10¹⁰ m/s", "D. 3×10⁴ m/s"], answer: "B", url: "teacher/zhan-jinfeng.html", lang: "chinese", subject: "Physics", icon: "⚛️" },
     { name: "林淑娟老师", color: "#F44336", question: "π 的近似值约等于多少？", options: ["A. 3.12", "B. 3.14", "C. 3.16", "D. 3.18"], answer: "B", url: "teacher/lin-shujuan.html", lang: "chinese", subject: "Mathematics", icon: "📐" },
     { name: "Mrs. Vatsala", color: "#000000", question: "How many letters are there in the English alphabet?", options: ["A. 24", "B. 25", "C. 26", "D. 27"], answer: "C", url: "teacher/mrs-vatsala.html", lang: "english", subject: "English", icon: "📖" },
-    { name: "黄荣富老师", color: "#FF9800", question: "10² 等于多少？", options: ["A. 10", "B. 20", "C. 50", "D. 100"], answer: "D", url: "teacher/huang-rongfu.html", lang: "chinese", subject: "Accounting", icon: "💼" },
-    { name: "林素铭老师", color: "#00A0E9", question: "马来西亚于哪一年独立？", options: ["A. 1955", "B. 1956", "C. 1957", "D. 1958"], answer: "C", url: "teacher/lin-suming.html", lang: "chinese", subject: "Sejarah", icon: "🏛️" },
-    { name: "许雍敏老师", color: "#C8A2FF", question: "光的三原色共有几种？", options: ["A. 2种", "B. 3种", "C. 4种", "D. 5种"], answer: "B", url: "teacher/teacher-linda.html", lang: "chinese", subject: "Science", icon: "🔬" },
-    { name: "蔡礼懃老师", color: "#D946EF", question: "联合国第11个可持续发展目标是什么？", options: ["A. 气候行动", "B. 水下生物", "C. 负责任消费和生产", "D. 可持续城市和社区"], answer: "D", url: "teacher/cai-liken.html", lang: "chinese", subject: "Sejarah", icon: "🌍" },
-    { name: "林家祺老师", color: "#1a1a1a", question: "联合国第12个可持续发展目标是什么？", options: ["A. 负责任消费和生产", "B. 负责任消费和生产", "C. 负责任消费和生产", "D. 和平正义与强大机构"], answer: "C", url: "teacher/lin-jiaqi.html", lang: "chinese", subject: "Civics", icon: "⚖️" },
+    { name: "黄荣富老师", color: "#FF9800", question: "10² 等于多少？", options: ["A. 10", "B. 20", "C. 50", "D. 100"], answer: "D", url: "teacher/huang-rongfu.html", lang: "chinese", subject: "数学", icon: "🔢" },
+    { name: "林素铭老师", color: "#00A0E9", question: "马来西亚于哪一年独立？", options: ["A. 1955", "B. 1956", "C. 1957", "D. 1958"], answer: "C", url: "teacher/lin-suming.html", lang: "chinese", subject: "历史", icon: "🏛️" },
+    { name: "许雍敏老师", color: "#C8A2FF", question: "光的三原色共有几种？", options: ["A. 2种", "B. 3种", "C. 4种", "D. 5种"], answer: "B", url: "teacher/teacher-linda.html", lang: "chinese", subject: "美术", icon: "🎨" },
+    { name: "蔡礼懃老师", color: "#D946EF", question: "联合国第11个可持续发展目标是什么？", options: ["A. 气候行动", "B. 水下生物", "C. 负责任消费和生产", "D. 可持续城市和社区"], answer: "D", url: "teacher/cai-liken.html", lang: "chinese", subject: "机器人", icon: "🤖" },
+    { name: "林家祺老师", color: "#1a1a1a", question: "联合国第12个可持续发展目标是什么？", options: ["A. 负责任消费和生产", "B. 负责任消费和生产", "C. 负责任消费和生产", "D. 和平正义与强大机构"], answer: "C", url: "teacher/lin-jiaqi.html", lang: "chinese", subject: "机器人", icon: "🤖" },
     { name: "Mrs. Pavithra", color: "#009688", question: "What is the past tense of 'write'?", options: ["A. writed", "B. wrote", "C. written", "D. writing"], answer: "B", url: "teacher/mrs-pavithra.html", lang: "english", subject: "English", icon: "✍️" },
-    { name: "张佳玲老师", color: "#EC4899", question: "Komputer memerlukan apa untuk berfungsi?", options: ["A. internet", "B. kuasa", "C. software", "D. monitor"], answer: "B", url: "teacher/zhang-jialing.html", lang: "malay", subject: "ICT", icon: "💻" },
+    { name: "张佳玲老师", color: "#EC4899", question: "Komputer memerlukan apa untuk berfungsi?", options: ["A. internet", "B. kuasa", "C. software", "D. monitor"], answer: "B", url: "teacher/zhang-jialing.html", lang: "malay", subject: "国文&电脑", icon: "💻" },
     { name: "黄慧婷老师", color: "#06B6D4", question: "汉字有多少个基本笔画？", options: ["A. 6个", "B. 7个", "C. 8个", "D. 9个"], answer: "C", url: "teacher/huang-huiting.html", lang: "chinese", subject: "Chinese", icon: "笔" },
     { name: "婧雯老师", color: "#9C27B0", question: "课业辅导的主要目的是什么？", options: ["A. 增加学生负担", "B. 帮助学生提高学业成绩", "C. 让学生多做题", "D. 延长上课时间"], answer: "B", url: "teacher/jing-wen.html", lang: "chinese", subject: "Tuition", icon: "📝" },
     { name: "孙庆龄老师", color: "#2196F3", question: "课业辅导对学生有什么帮助？", options: ["A. 让学生更累", "B. 减少课堂作业", "C. 增加课外活动", "D. 提高学习能力和成绩"], answer: "D", url: "teacher/sun-qingling.html", lang: "chinese", subject: "Tuition", icon: "🎯" },
     { name: "Mrs. Subatra", color: "#F44336", question: "What is the past tense of 'go'?", options: ["A. goed", "B. gone", "C. went", "D. going"], answer: "C", url: "teacher/mrs-subatra.html", lang: "english", subject: "English", icon: "🗣️" },
     { name: "崔家琪老师", color: "#2196F3", question: "生物学主要研究什么？", options: ["A. 岩石和矿物", "B. 生命现象和生物活动规律", "C. 天体和宇宙", "D. 社会和文化"], answer: "B", url: "teacher/cui-jiaqi.html", lang: "chinese", subject: "Biology", icon: "🧬" },
     { name: "尤雪慧老师", color: "#2196F3", question: "电脑的基本组成部分有哪些？", options: ["A. 显示器和键盘", "B. CPU和内存", "C. 硬件和软件", "D. 鼠标和主机"], answer: "C", url: "teacher/you-xuehui.html", lang: "chinese", subject: "ICT", icon: "🖥️" },
-    { name: "洪星宇老师", color: "#808080", question: "夏威夷装饰有什么特色？", options: ["A. 中国风和剪纸", "B. 欧式古典花纹", "C. 日本浮世绘风格", "D. 热带风情和自然元素"], answer: "D", url: "teacher/hong-xingyu.html", lang: "chinese", subject: "Art", icon: "🎨" },
+    { name: "洪星宇老师", color: "#808080", question: "汉字有多少个基本笔画？", options: ["A. 4个", "B. 6个", "C. 8个", "D. 12个"], answer: "C", url: "teacher/hong-xingyu.html", lang: "chinese", subject: "Chinese", icon: "📖" },
     { name: "符丽娜老师", color: "#FFFFFF", question: "华文学习的重要性是什么？", options: ["A. 传承中华文化", "B. 增加考试压力", "C. 浪费时间", "D. 只是多一门语言"], answer: "A", url: "teacher/fu-lina.html", lang: "chinese", subject: "Chinese", icon: "书法" },
     { name: "林亚鸾老师", color: "#FF8C00", question: "经济学研究的核心是什么？", options: ["A. 市场营销", "B. 资源分配", "C. 消费者心理", "D. 政府政策"], answer: "B", url: "teacher/lin-yalian.html", lang: "chinese", subject: "Economics", icon: "📊" },
-    { name: "黄爱玲老师", color: "#BA68C8", question: "班长带是什么颜色的？", options: ["A. 红色", "B. 蓝色", "C. 紫色", "D. 绿色"], answer: "C", url: "teacher/huang-ailing.html", lang: "chinese", subject: "Class A", icon: "🎗️" },
-    { name: "杜静颖老师", color: "#9B59B6", question: "学长带是什么颜色的？", options: ["A. 蓝色/红色", "B. 绿色/黄色", "C. 紫色/粉色", "D. 橙色/黑色"], answer: "A", url: "teacher/du-jingying.html", lang: "chinese", subject: "Class B", icon: "🎖️" },
+    { name: "黄爱玲老师", color: "#BA68C8", question: "班长带是什么颜色的？", options: ["A. 红色", "B. 蓝色", "C. 紫色", "D. 绿色"], answer: "C", url: "teacher/huang-ailing.html", lang: "chinese", subject: "训育处", icon: "🎗️" },
+    { name: "杜静颖老师", color: "#9B59B6", question: "学长带是什么颜色的？", options: ["A. 蓝色/红色", "B. 绿色/黄色", "C. 紫色/粉色", "D. 橙色/黑色"], answer: "A", url: "teacher/du-jingying.html", lang: "chinese", subject: "训育处", icon: "🎖️" },
     { name: "罗凯欣老师", color: "#FFC107", question: "华文老师上课最喜欢穿什么颜色的衣服？", options: ["A. 红色", "B. 黄色", "C. 白色", "D. 蓝色"], answer: "B", url: "teacher/luo-kaixin.html", lang: "chinese", subject: "Chinese", icon: "👗" },
     { name: "朱彦翰老师", color: "#757575", question: "中华人民共和国是哪一年成立的？", options: ["A. 1945年", "B. 1946年", "C. 1948年", "D. 1949年"], answer: "D", url: "teacher/zhu-yanhan.html", lang: "chinese", subject: "历史", icon: "📜" },
     { name: "罗贤惟老师", color: "#D32F2F", question: "下列哪项属于体育运动项目？", options: ["A. 篮球", "B. 围棋", "C. 绘画", "D. 书法"], answer: "A", url: "teacher/luo-xianwei.html", lang: "chinese", subject: "体育", icon: "⚽" },
-    { name: "Cikgu Nabilah", color: "#D32F2F", question: "Perjanjian Malayan Union ditandatangani pada tahun berapa?", options: ["A. 1944", "B. 1945", "C. 1946", "D. 1947"], answer: "C", url: "teacher/cikgu-nabilah.html", lang: "malay", subject: "Sejarah", icon: "📚" }
+    { name: "Cikgu Nabilah", color: "#D32F2F", question: "Perjanjian Malayan Union ditandatangani pada tahun berapa?", options: ["A. 1944", "B. 1945", "C. 1946", "D. 1947"], answer: "C", url: "teacher/cikgu-nabilah.html", lang: "malay", subject: "Bahasa Malaysia", icon: "📚" }
 ];
 
 // ===== Answer check (letter comparison for MCQ) =====
@@ -74,6 +74,7 @@ const translations = {
         diy_placeholder: "写下你的祝福...",
         diy_download: "📥 下载卡片",
         diy_add_sticker: "+ 添加",
+        diy_sticker_bg_label: "贴纸背景:",
         envelope_thanks: "谢谢 Terima Kasih 🙏",
         envelope_greeting: "💌",
         title_malay: "Selamat Hari Guru",
@@ -108,6 +109,7 @@ const translations = {
         diy_placeholder: "Tulis doa anda...",
         diy_download: "📥 Muat Turun Kad",
         diy_add_sticker: "+ Tambah",
+        diy_sticker_bg_label: "Latar Pelekat:",
         envelope_thanks: "Terima Kasih 🙏",
         envelope_greeting: "💌",
         title_malay: "Selamat Hari Guru",
@@ -142,6 +144,7 @@ const translations = {
         diy_placeholder: "Write your blessing...",
         diy_download: "📥 Download Card",
         diy_add_sticker: "+ Add",
+        diy_sticker_bg_label: "Sticker BG:",
         envelope_thanks: "Thank You 🙏",
         envelope_greeting: "💌",
         title_malay: "Selamat Hari Guru",
@@ -300,6 +303,16 @@ function applyLanguage(lang) {
         el.style.height = el.classList.contains('title-' + lang) ? '' : '0';
         el.style.overflow = el.classList.contains('title-' + lang) ? '' : 'hidden';
     });
+
+    // Apply sticker bg label
+    const stickerBgLabel = document.getElementById('diyStickerBgLabel');
+    if (stickerBgLabel && t.diy_sticker_bg_label) {
+        stickerBgLabel.textContent = t.diy_sticker_bg_label;
+    }
+    const greetingLabel = document.getElementById('diyGreetingLabel');
+    if (greetingLabel) {
+        greetingLabel.textContent = lang === 'chinese' ? '问候语:' : lang === 'malay' ? 'Salam:' : 'Greeting:';
+    }
 }
 
 // ===== Welcome Overlay =====
@@ -476,12 +489,35 @@ function showGuessResult(teacherName) {
 }
 
 // ===== DIY Card Designer — Enhanced with more colors & drag =====
-let diyState = { bg: 'gold', color: '#1a1a2e', sticker: '🌹', msg: '', stickers: [{ emoji: '🌹', x: 85, y: 10 }] };
+let diyState = { bg: 'gold', color: '#1a1a2e', sticker: '🌹', msg: '', stickers: [{ emoji: '🌹', x: 50, y: 15 }], greeting: 'chinese', stickerBgDark: false };
 const diyBgs = {
     gold: 'linear-gradient(135deg, #FFF8DC, #FFEFD5, #FFD700)',
     pink: 'linear-gradient(135deg, #FFE4E1, #FFC0CB, #FF69B4)',
     blue: 'linear-gradient(135deg, #E0F7FA, #B3E5FC, #29B6F6)',
-    green: 'linear-gradient(135deg, #E8F5E9, #C8E6C9, #66BB6A)'
+    green: 'linear-gradient(135deg, #E8F5E9, #C8E6C9, #66BB6A)',
+    purple: 'linear-gradient(135deg, #F3E5F5, #E1BEE7, #9C27B0)',
+    orange: 'linear-gradient(135deg, #FFF3E0, #FFE0B2, #FF9800)',
+    red: 'linear-gradient(135deg, #FFEBEE, #FFCDD2, #E53935)',
+    cyan: 'linear-gradient(135deg, #E0F7FA, #B2EBF2, #00BCD4)',
+    mint: 'linear-gradient(135deg, #E8F5E9, #C8E6C9, #4CAF50)',
+    lavender: 'linear-gradient(135deg, #EDE7F6, #D1C4E9, #673AB7)',
+    peach: 'linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFAB91)',
+    sky: 'linear-gradient(135deg, #E3F2FD, #BBDEFB, #2196F3)',
+    coral: 'linear-gradient(135deg, #FBE9E7, #FFCCBC, #FF5722)',
+    lemon: 'linear-gradient(135deg, #FFFDE7, #FFF9C4, #FFEB3B)',
+    rose: 'linear-gradient(135deg, #FCE4EC, #F8BBD0, #E91E63)',
+    sunset: 'linear-gradient(135deg, #FFF8E1, #FFE0B2, #FF6F00)',
+    ocean: 'linear-gradient(135deg, #E0F2F1, #B2DFDB, #00897B)',
+    forest: 'linear-gradient(135deg, #E8F5E9, #A5D6A7, #2E7D32)',
+    midnight: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)',
+    cream: 'linear-gradient(135deg, #FFFDE7, #FFF8E1, #FFECB3)'
+};
+
+// Greeting text in three languages
+const diyGreetings = {
+    chinese: '教师节快乐',
+    malay: 'Selamat Hari Guru',
+    english: "Happy Teachers' Day"
 };
 
 // Extended color palette
@@ -505,6 +541,12 @@ function initDiyDesigner() {
         });
     });
 
+    // Update modal title based on language
+    const diyTitleEl = document.getElementById('diyTitle');
+    if (diyTitleEl && translations[currentLang]?.diy_title) {
+        diyTitleEl.textContent = translations[currentLang].diy_title;
+    }
+
     // Color swatches
     const colorContainer = document.querySelector('.diy-control-row')?.parentElement;
     // We'll rebuild the color swatches dynamically
@@ -514,6 +556,26 @@ function initDiyDesigner() {
     document.querySelectorAll('.diy-sticker-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             diyState.sticker = btn.dataset.sticker;
+            updateDiyPreview();
+        });
+    });
+
+    // Greeting language buttons
+    document.querySelectorAll('.diy-greeting-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.diy-greeting-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            diyState.greeting = btn.dataset.lang;
+            updateDiyPreview();
+        });
+    });
+
+    // Sticker dark bg toggle
+    document.querySelectorAll('.diy-sticker-bg-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.diy-sticker-bg-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            diyState.stickerBgDark = btn.dataset.dark === 'true';
             updateDiyPreview();
         });
     });
@@ -575,6 +637,19 @@ function updateDiyPreview() {
     const titleText = document.getElementById('diyTitleText');
     const msgText = document.getElementById('diyMsgText');
 
+    // Sticker dark bg wrapper
+    let stickerBgWrapper = preview.querySelector('.diy-sticker-bg-wrapper');
+    if (diyState.stickerBgDark) {
+        if (!stickerBgWrapper) {
+            stickerBgWrapper = document.createElement('div');
+            stickerBgWrapper.className = 'diy-sticker-bg-wrapper';
+            stickerBgWrapper.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.6);border-radius:16px;backdrop-filter:blur(2px);pointer-events:none;z-index:1;';
+            preview.appendChild(stickerBgWrapper);
+        }
+    } else if (stickerBgWrapper) {
+        stickerBgWrapper.remove();
+    }
+
     preview.style.background = diyBgs[diyState.bg] || diyBgs.gold;
     titleText.style.color = diyState.color;
     msgText.style.color = diyState.color;
@@ -604,7 +679,8 @@ function updateDiyPreview() {
     }
 
     msgText.textContent = diyState.msg;
-    titleText.textContent = translations[currentLang]?.title_chinese || 'Happy Teachers\' Day!';
+    const greetingKey = 'title_' + (diyState.greeting || currentLang);
+    titleText.textContent = translations[diyState.greeting || currentLang]?.[greetingKey] || diyGreetings[diyState.greeting || currentLang];
 }
 
 // ===== Draggable elements =====
@@ -684,53 +760,42 @@ function makeDraggable(el, onMove) {
 
 function downloadDiyCard() {
     const preview = document.getElementById('diyPreview');
-    const canvas = document.createElement('canvas');
-    canvas.width = 600; canvas.height = 800;
-    const ctx = canvas.getContext('2d');
-
-    // Draw background
-    const grad = ctx.createLinearGradient(0, 0, 600, 800);
-    grad.addColorStop(0, '#FFF8DC'); grad.addColorStop(0.5, '#FFEFD5'); grad.addColorStop(1, '#FFD700');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 600, 800);
-
-    // Border
-    ctx.strokeStyle = 'rgba(255,215,0,0.5)';
-    ctx.lineWidth = 8;
-    ctx.strokeRect(20, 20, 560, 760);
-
-    // Sticker
-    ctx.font = '80px serif';
-    ctx.fillText(diyState.stickers.length > 0 ? diyState.stickers[0].emoji : '🌹', 480, 100);
-
-    // Title
-    ctx.fillStyle = diyState.color;
-    ctx.font = 'bold 48px Cormorant Garamond, serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(translations[currentLang]?.title_chinese || 'Happy Teachers\' Day!', 300, 200);
-
-    // Message
-    if (diyState.msg) {
-        ctx.font = '28px Cormorant Garamond, serif';
-        ctx.fillText(diyState.msg, 300, 350);
+    // Disable stickers-bg-wrapper before capturing so it's not included in screenshot
+    const stickerBgWrapper = preview.querySelector('.diy-sticker-bg-wrapper');
+    let bgHidden = false;
+    if (stickerBgWrapper) {
+        stickerBgWrapper.style.display = 'none';
+        bgHidden = true;
     }
 
-    // Decorative elements
-    ctx.font = '60px serif';
-    ctx.fillText('🌸', 50, 500);
-    ctx.fillText('🌹', 500, 500);
-    ctx.fillText('✨', 300, 650);
+    // Make the modal visible temporarily so html2canvas can see it
+    // html2canvas ignores hidden elements, so ensure modal is not display:none
+    const diyModal = document.getElementById('diyModal');
+    const wasOpen = diyModal.classList.contains('open');
 
-    // Footer
-    ctx.font = '20px Cormorant Garamond, serif';
-    ctx.fillStyle = 'rgba(0,0,0,0.4)';
-    ctx.fillText('Happy Teachers\' Day 2025', 300, 750);
+    // Use html2canvas to capture exactly what user sees on screen
+    html2canvas(preview, {
+        backgroundColor: null,
+        scale: 2,  // high resolution
+        useCORS: true,
+        logging: false
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'my-teachers-day-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
 
-    // Download
-    const link = document.createElement('a');
-    link.download = 'teachers-day-card.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+        // Restore
+        if (bgHidden && stickerBgWrapper) {
+            stickerBgWrapper.style.display = '';
+        }
+    }).catch(() => {
+        // Fallback: if html2canvas fails, just save preview as-is
+        if (bgHidden && stickerBgWrapper) {
+            stickerBgWrapper.style.display = '';
+        }
+        alert('Please make sure you have internet connection for the download feature.');
+    });
 }
 
 // ===== Confetti Burst =====

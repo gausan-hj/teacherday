@@ -535,20 +535,29 @@ body {
 .diy-preview-area .diy-sticker {
     font-size:3rem;position:absolute;cursor:grab;user-select:none;
     transition:filter 0.2s ease;z-index:2;
+    filter:drop-shadow(0 1px 3px rgba(0,0,0,0.3));
 }
 .diy-preview-area .diy-sticker:active { cursor:grabbing; }
-.diy-preview-area .diy-sticker:hover { filter:drop-shadow(0 0 8px rgba(255,215,0,0.5)); }
+.diy-preview-area .diy-sticker:hover { filter:drop-shadow(0 0 8px rgba(255,215,0,0.5)) drop-shadow(0 1px 3px rgba(0,0,0,0.3)); }
 .diy-preview-area .diy-title {
     font-family:'Great Vibes',cursive; font-size:1.8rem; margin-bottom:0.5rem;
     transition:color 0.3s ease;
+    text-shadow:0 2px 4px rgba(0,0,0,0.2);
+}
+.diy-preview-area .diy-msg-text {
+    font-size:1.1rem; max-width:80%;text-align:center;
+    transition:color 0.3s ease;
+    text-shadow:0 1px 2px rgba(0,0,0,0.15);
+    min-height:1.5em;
 }
 .diy-preview-area .diy-msg {
     font-size:1rem; max-width:80%;text-align:center;
     transition:color 0.3s ease;
+    text-shadow:0 1px 2px rgba(0,0,0,0.15);
 }
 .diy-controls { display:flex;flex-direction:column;gap:1rem;align-items:center;margin-bottom:1.5rem; }
-.diy-control-row { display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;align-items:center; }
-.diy-label { font-size:0.9rem;color:rgba(255,255,240,0.7);min-width:60px;text-align:right; }
+.diy-control-row { display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;align-items:center;width:100%;max-width:600px;padding:0.3rem 0; }
+.diy-label { font-size:0.85rem;color:rgba(255,255,240,0.7);min-width:70px;text-align:right;flex-shrink:0;white-space:nowrap; }
 .diy-color-swatch {
     width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,215,0,0.3);
     cursor:pointer;transition:all 0.2s ease;
@@ -556,11 +565,11 @@ body {
 .diy-color-swatch:hover,.diy-color-swatch.active { border-color:var(--gold-primary);transform:scale(1.2); }
 .diy-sticker-btn {
     font-size:1.5rem;width:40px;height:40px;border-radius:10px;
-    border:1px solid rgba(255,215,0,0.2);background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,215,0,0.3);background:rgba(0,0,0,0.4);color:var(--ivory-white);font-size:1.5rem;
     cursor:pointer;transition:all 0.2s ease;display:flex;align-items:center;
-    justify-content:center;
+    justify-content:center;font-size:1.2rem;line-height:1;padding:6px;
 }
-.diy-sticker-btn:hover { background:rgba(255,215,0,0.15);transform:scale(1.1); }
+.diy-sticker-btn:hover,.diy-sticker-btn.active { background:rgba(255,215,0,0.25);border-color:var(--gold-primary);transform:scale(1.15); }
 .diy-bg-btn {
     padding:0.5rem 1rem;border-radius:10px;border:1px solid rgba(255,215,0,0.2);
     background:rgba(255,255,255,0.05);color:var(--ivory-white);font-size:0.9rem;
@@ -572,12 +581,25 @@ body {
     border-radius:10px;color:var(--ivory-white);font-family:'Cormorant Garamond',serif;font-size:1rem;
     width:100%;max-width:300px;text-align:center;
 }
+.diy-text-input::placeholder { color:rgba(255,255,240,0.4); }
 .diy-add-sticker-btn {
     padding:0.5rem 1rem;border-radius:10px;border:1px dashed rgba(255,215,0,0.4);
     background:rgba(255,215,0,0.05);color:var(--gold-primary);font-size:0.9rem;
     cursor:pointer;transition:all 0.2s ease;
 }
 .diy-add-sticker-btn:hover { background:rgba(255,215,0,0.15); }
+.diy-sticker-bg-btn {
+    padding:0.5rem 1rem;border-radius:10px;border:1px solid rgba(255,215,0,0.3);
+    background:rgba(0,0,0,0.4);color:var(--ivory-white);font-size:0.85rem;
+    cursor:pointer;transition:all 0.2s ease;
+}
+.diy-sticker-bg-btn:hover,.diy-sticker-bg-btn.active { background:rgba(255,215,0,0.25);border-color:var(--gold-primary); }
+.diy-greeting-btn {
+    padding:0.4rem 0.8rem;border-radius:10px;border:1px solid rgba(255,215,0,0.3);
+    background:rgba(0,0,0,0.4);color:var(--ivory-white);font-size:0.8rem;
+    cursor:pointer;transition:all 0.2s ease;white-space:nowrap;
+}
+.diy-greeting-btn:hover,.diy-greeting-btn.active { background:rgba(255,215,0,0.25);border-color:var(--gold-primary); }
 .diy-submit-btn {
     padding:0.8rem 2rem;background:linear-gradient(135deg,var(--gold-primary),var(--gold-secondary));
     color:var(--navy-blue);border:none;border-radius:50px;font-family:'Cormorant Garamond',serif;
