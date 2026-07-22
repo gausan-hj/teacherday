@@ -265,7 +265,7 @@ function detectDevice() {
     }
 }
 
-// ===== Particle Count by Device =====
+// ===== Particle Count by Device (Ultra-reduced on mobile) =====
 function getParticleCount(desktop, tablet, mobile, ultraMobile) {
     const w = window.innerWidth;
     if (w <= 420) return ultraMobile;
@@ -273,6 +273,11 @@ function getParticleCount(desktop, tablet, mobile, ultraMobile) {
     if (w <= 1024) return tablet;
     return desktop;
 }
+
+// ===== Pause animations when page is not visible =====
+document.addEventListener('visibilitychange', () => {
+    document.body.classList.toggle('paused', document.hidden);
+});
 
 // ===== Apply Current Language =====
 function applyLanguage(lang) {
@@ -1180,10 +1185,10 @@ function initTeacherNameAnimation() {
 
         selected.forEach((s, i) => {
             setTimeout(() => {
-                s.element.style.transition = 'opacity 0.5s ease-in-out';
+                s.element.style.transition = 'opacity 0.4s ease-in-out';
                 s.element.style.opacity = '1'; s.element.style.pointerEvents = 'auto';
                 s.element.classList.add('visible'); s.isVisible = true; s.isGlowing = true;
-                const stayDuration = 2000 + Math.random() * 2000;
+                const stayDuration = isMobileDevice ? 3000 : (2000 + Math.random() * 2000);
                 setTimeout(() => {
                     s.element.style.opacity = '0'; s.element.style.pointerEvents = 'none';
                     s.element.classList.remove('visible'); s.isVisible = false; s.isGlowing = false;
@@ -1194,12 +1199,13 @@ function initTeacherNameAnimation() {
                             s.currentX = newPos[idx].x; s.currentY = newPos[idx].y;
                             s.element.style.transform = `translate3d(${newPos[idx].x}px,${newPos[idx].y}px,0)`;
                         }
-                    }, 500);
+                    }, 300);
                 }, stayDuration);
-            }, i * 300);
+            }, i * 200);
         });
 
-        randomAppearanceTimeout = setTimeout(startCycle, 4000 + Math.random() * 2000);
+        const cycleInterval = isMobileDevice ? 5000 : (4000 + Math.random() * 2000);
+        randomAppearanceTimeout = setTimeout(startCycle, cycleInterval);
     }
 
     setTimeout(startCycle, 1000);
@@ -1285,9 +1291,20 @@ function initIntersectionObserver() {
 // ===== Loading State =====
 window.addEventListener('load', () => { document.body.classList.add('loaded'); });
 
-// ===== Reduced Motion =====
+// ===== Reduce motion if user prefers =====
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('reduced-motion');
+}
+
+// ===== Disable heavy animations when not in view =====
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle('in-view', entry.isIntersecting);
+        });
+    }, { threshold: 0.1 });
+    const badgeSection = document.querySelector('.badge-section');
+    if (badgeSection) observer.observe(badgeSection);
 }
 
 // ===== Teacher Name Card Keyboard Navigation =====
