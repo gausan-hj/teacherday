@@ -30,7 +30,23 @@ const teachers = [
     { name: "罗凯欣老师", color: "#FFC107", question: "华文老师上课最喜欢穿什么颜色的衣服？", options: ["A. 红色", "B. 黄色", "C. 白色", "D. 蓝色"], answer: "B", url: "teacher/luo-kaixin.html", lang: "chinese", subject: "Chinese", icon: "👗" },
     { name: "朱彦翰老师", color: "#757575", question: "中华人民共和国是哪一年成立的？", options: ["A. 1945年", "B. 1946年", "C. 1948年", "D. 1949年"], answer: "D", url: "teacher/zhu-yanhan.html", lang: "chinese", subject: "历史", icon: "📜" },
     { name: "罗贤惟老师", color: "#D32F2F", question: "下列哪项属于体育运动项目？", options: ["A. 篮球", "B. 围棋", "C. 绘画", "D. 书法"], answer: "A", url: "teacher/luo-xianwei.html", lang: "chinese", subject: "体育", icon: "⚽" },
-    { name: "Cikgu Nabilah", color: "#D32F2F", question: "Perjanjian Malayan Union ditandatangani pada tahun berapa?", options: ["A. 1944", "B. 1945", "C. 1946", "D. 1947"], answer: "C", url: "teacher/cikgu-nabilah.html", lang: "malay", subject: "Bahasa Malaysia", icon: "📚" }
+    { name: "Cikgu Nabilah", color: "#D32F2F", question: "Perjanjian Malayan Union ditandatangani pada tahun berapa?", options: ["A. 1944", "B. 1945", "C. 1946", "D. 1947"], answer: "C", url: "teacher/cikgu-nabilah.html", lang: "malay", subject: "Bahasa Malaysia", icon: "📚" },
+    // ===== New Teachers =====
+    { name: "MS Pei Yi", color: "#2196F3", question: "What is the present tense of 'went'?", options: ["A. Go", "B. Goes", "C. Going", "D. Gone"], answer: "A", url: "teacher/ms-pei-yi.html", lang: "english", subject: "English", icon: "📘" },
+    { name: "叶优蒂老师", color: "#2196F3", question: "下列哪项属于体育运动项目？", options: ["A. 篮球", "B. 围棋", "C. 绘画", "D. 书法"], answer: "A", url: "teacher/ye-you-di.html", lang: "chinese", subject: "体育", icon: "⚽" },
+    { name: "谢侒琪老师", color: "#808080", question: "电脑的基本组成部分有哪些？", options: ["A. 显示器和键盘", "B. CPU和内存", "C. 硬件和软件", "D. 鼠标和主机"], answer: "C", url: "teacher/xie-an-qi.html", lang: "chinese", subject: "ICT", icon: "💻" },
+    { name: "Cikgu Shula", color: "#4CAF50", question: "Bahasa Melayu adalah bahasa rasmi negara kita.", options: ["A. Betul", "B. Salah", "C. Mungkin", "D. Tidak pasti"], answer: "A", url: "teacher/cikgu-shula.html", lang: "malay", subject: "Bahasa Malaysia", icon: "🌺" },
+    { name: "李伟仁老师", color: "#1565C0", question: "水的化学式是什么？", options: ["A. HO", "B. H₂O", "C. OH₂", "D. H₂O₂"], answer: "B", url: "teacher/li-wei-ren.html", lang: "chinese", subject: "Chemistry", icon: "🔬" },
+    { name: "胡瑜文老师", color: "#00BCD4", question: "课业辅导的主要目的是什么？", options: ["A. 增加学生负担", "B. 帮助学生提高学业成绩", "C. 让学生多做题", "D. 延长上课时间"], answer: "B", url: "teacher/hu-yu-wen.html", lang: "chinese", subject: "Tuition", icon: "📝" },
+    { name: "郭丽梅老师", color: "#CE93D8", question: "π 的近似值约等于多少？", options: ["A. 3.12", "B. 3.14", "C. 3.16", "D. 3.18"], answer: "B", url: "teacher/guo-li-mei.html", lang: "chinese", subject: "Mathematics", icon: "📐" },
+    { name: "黄玉梅助理", color: "#AB47BC", question: "班长带是什么颜色的？", options: ["A. 红色", "B. 蓝色", "C. 紫色", "D. 绿色"], answer: "C", url: "teacher/huang-yu-mei.html", lang: "chinese", subject: "训育处助理", icon: "🎗️" },
+    { name: "王明浴校长", color: "#FFD700", question: "校长的主要职责是什么？", options: ["A. 教授所有科目", "B. 管理学校运作和发展", "C. 负责厨房管理", "D. 负责清洁工作"], answer: "B", url: "teacher/wang-ming-yu.html", lang: "chinese", subject: "校长", icon: "👨‍💼" },
+    { name: "蔡文兴老师", color: "#1E88E5", question: "教务处主要负责什么工作？", options: ["A. 教学安排与行政事务", "B. 体育比赛组织", "C. 食堂管理", "D. 绿化维护"], answer: "A", url: "teacher/cai-wen-xing.html", lang: "chinese", subject: "教务处主任", icon: "📋" },
+    { name: "吴绍宾老师", color: "#EC4899", question: "教务处的工作内容有哪些？", options: ["A. 课程安排", "B. 学生管理", "C. 教师协调", "D. 以上皆是"], answer: "D", url: "teacher/wu-shao-bin.html", lang: "chinese", subject: "教务处", icon: "📋" },
+    { name: "周欣宜老师", color: "#F06292", question: "华文学习的重要性是什么？", options: ["A. 传承中华文化", "B. 增加考试压力", "C. 浪费时间", "D. 只是多一门语言"], answer: "A", url: "teacher/zhou-xin-yi.html", lang: "chinese", subject: "Chinese", icon: "📖" },
+    { name: "翟宣仁老师", color: "#26A69A", question: "物理学研究什么内容？", options: ["A. 生命现象", "B. 物质运动和相互作用", "C. 社会文化", "D. 天体运行"], answer: "B", url: "teacher/zhai-xuan-ren.html", lang: "chinese", subject: "Physics", icon: "⚛️" },
+    { name: "李淑君老师", color: "#26A69A", question: "生物学主要研究什么？", options: ["A. 岩石和矿物", "B. 生命现象和生物活动规律", "C. 天体和宇宙", "D. 社会和文化"], answer: "B", url: "teacher/li-shu-jun.html", lang: "chinese", subject: "Science", icon: "🔬" },
+    { name: "刘国梁老师", color: "#1565C0", question: "马来西亚于哪一年独立？", options: ["A. 1955", "B. 1956", "C. 1957", "D. 1958"], answer: "C", url: "teacher/liu-guo-liang.html", lang: "chinese", subject: "历史", icon: "🏛️" }
 ];
 
 // ===== Answer check (letter comparison for MCQ) =====
