@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="朱彦翰老师 - Teachers' Day Celebration">
-    <title>朱彦翰老师 | Teachers' Day</title>
+    <meta name="description" content="Teacher Pavithra - Teachers' Day Celebration">
+    <title>Teacher Pavithra | Teachers' Day</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,15 +12,15 @@
     <style>
 
         :root {
-            --theme-primary: #757575;
-            --theme-secondary: #616161;
-            --theme-tertiary: #424242;
-            --theme-light: #9E9E9E;
-            --theme-gradient: linear-gradient(135deg, #757575 0%, #616161 50%, #424242 100%);
-            --glow-red: rgba(117, 117, 117, 0.6);
-            --glow-soft: rgba(117, 117, 117, 0.25);
-            --glass-bg: rgba(117, 117, 117, 0.08);
-            --glass-border: rgba(117, 117, 117, 0.25);
+            --theme-primary: #009688;
+            --theme-secondary: #00796B;
+            --theme-tertiary: #004D40;
+            --theme-light: #B9F6CA;
+            --theme-gradient: linear-gradient(135deg, #009688 0%, #00796B 50%, #004D40 100%);
+            --glow-red: rgba(244, 67, 54, 0.6);
+            --glow-soft: rgba(244, 67, 54, 0.25);
+            --glass-bg: rgba(244, 67, 54, 0.08);
+            --glass-border: rgba(244, 67, 54, 0.25);
         }
 
         /* ==========================================
@@ -42,7 +42,7 @@
             position: absolute;
             width: 6px;
             height: 6px;
-            background: radial-gradient(circle, rgba(200, 200, 200, 0.9) 0%, rgba(117, 117, 117, 0.4) 50%, transparent 100%);
+            background: radial-gradient(circle, rgba(255, 200, 200, 0.9) 0%, rgba(244, 67, 54, 0.4) 50%, transparent 100%);
             border-radius: 50%;
             animation: sparkleDrift var(--duration, 8s) ease-in-out infinite;
             animation-delay: var(--delay, 0s);
@@ -115,9 +115,9 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at 20% 20%, rgba(117, 117, 117, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(97, 97, 97, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(66, 66, 66, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 20%, rgba(244, 67, 54, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(211, 47, 47, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(183, 28, 28, 0.08) 0%, transparent 70%),
                 linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             z-index: -2;
             animation: gradientShift 15s ease-in-out infinite;
@@ -138,8 +138,8 @@
             pointer-events: none;
             opacity: 0.03;
             background-image:
-                radial-gradient(circle at 25% 25%, rgba(117, 117, 117, 0.8) 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, rgba(117, 117, 117, 0.8) 1px, transparent 1px);
+                radial-gradient(circle at 25% 25%, rgba(244, 67, 54, 0.8) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(244, 67, 54, 0.8) 1px, transparent 1px);
             background-size: 60px 60px;
             animation: patternDrift 30s linear infinite;
         }
@@ -177,17 +177,17 @@
             background: linear-gradient(
                 135deg,
                 rgba(255, 255, 255, 0.08) 0%,
-                rgba(117, 117, 117, 0.06) 50%,
+                rgba(244, 67, 54, 0.06) 50%,
                 rgba(255, 255, 255, 0.04) 100%
             );
-            border: 1px solid rgba(117, 117, 117, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.2);
             border-radius: 32px;
             backdrop-filter: blur(24px) saturate(1.4);
             -webkit-backdrop-filter: blur(24px) saturate(1.4);
             box-shadow:
                 0 25px 80px rgba(0, 0, 0, 0.35),
-                0 8px 32px rgba(117, 117, 117, 0.15),
-                0 0 60px rgba(117, 117, 117, 0.08),
+                0 8px 32px rgba(244, 67, 54, 0.15),
+                0 0 60px rgba(244, 67, 54, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -205,10 +205,10 @@
             padding: 2px;
             background: linear-gradient(
                 135deg,
-                rgba(117, 117, 117, 0.4),
-                rgba(189, 189, 189, 0.2),
-                rgba(117, 117, 117, 0.4),
-                rgba(189, 189, 189, 0.2)
+                rgba(244, 67, 54, 0.4),
+                rgba(255, 150, 150, 0.2),
+                rgba(244, 67, 54, 0.4),
+                rgba(255, 150, 150, 0.2)
             );
             background-size: 400% 400%;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -241,15 +241,15 @@
             height: 180px;
             margin: 0 auto 2.5rem;
             border-radius: 50%;
-            background: linear-gradient(145deg, #9E9E9E 0%, #757575 60%, #616161 100%);
+            background: linear-gradient(145deg, #B9F6CA 0%, #009688 60%, #00796B 100%);
             border: 4px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4.5rem;
             box-shadow:
-                0 0 40px rgba(117, 117, 117, 0.35),
-                0 0 80px rgba(117, 117, 117, 0.15),
+                0 0 40px rgba(244, 67, 54, 0.35),
+                0 0 80px rgba(244, 67, 54, 0.15),
                 0 12px 40px rgba(0, 0, 0, 0.25),
                 inset 0 -4px 12px rgba(0, 0, 0, 0.15),
                 inset 0 4px 12px rgba(255, 255, 255, 0.2);
@@ -263,7 +263,7 @@
             position: absolute;
             inset: -8px;
             border-radius: 50%;
-            border: 2px solid rgba(117, 117, 117, 0.3);
+            border: 2px solid rgba(244, 67, 54, 0.3);
             animation: ringRotate 10s linear infinite;
             z-index: -1;
         }
@@ -274,7 +274,7 @@
             position: absolute;
             inset: -16px;
             border-radius: 50%;
-            border: 1px dashed rgba(117, 117, 117, 0.2);
+            border: 1px dashed rgba(244, 67, 54, 0.2);
             animation: ringRotate 15s linear infinite reverse;
             z-index: -1;
         }
@@ -287,16 +287,16 @@
         @keyframes avatarGlow {
             0%, 100% {
                 box-shadow:
-                    0 0 40px rgba(117, 117, 117, 0.35),
-                    0 0 80px rgba(117, 117, 117, 0.15),
+                    0 0 40px rgba(244, 67, 54, 0.35),
+                    0 0 80px rgba(244, 67, 54, 0.15),
                     0 12px 40px rgba(0, 0, 0, 0.25),
                     inset 0 -4px 12px rgba(0, 0, 0, 0.15),
                     inset 0 4px 12px rgba(255, 255, 255, 0.2);
             }
             50% {
                 box-shadow:
-                    0 0 60px rgba(117, 117, 117, 0.5),
-                    0 0 100px rgba(117, 117, 117, 0.25),
+                    0 0 60px rgba(244, 67, 54, 0.5),
+                    0 0 100px rgba(244, 67, 54, 0.25),
                     0 12px 40px rgba(0, 0, 0, 0.25),
                     inset 0 -4px 12px rgba(0, 0, 0, 0.15),
                     inset 0 4px 12px rgba(255, 255, 255, 0.25);
@@ -311,7 +311,7 @@
             font-family: 'Noto Serif SC', serif;
             font-size: 3.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #EEEEEE 0%, #BDBDBD 40%, #9E9E9E 70%, #757575 100%);
+            background: linear-gradient(135deg, #B9F6CA 0%, #009688 40%, #00796B 70%, #00796B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -323,17 +323,17 @@
 
         @keyframes textGlow {
             0%, 100% {
-                filter: drop-shadow(0 0 8px rgba(117, 117, 117, 0.3));
+                filter: drop-shadow(0 0 8px rgba(244, 67, 54, 0.3));
             }
             50% {
-                filter: drop-shadow(0 0 20px rgba(117, 117, 117, 0.6));
+                filter: drop-shadow(0 0 20px rgba(244, 67, 54, 0.6));
             }
         }
 
         .profile-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            color: rgba(200, 200, 200, 0.85);
+            color: rgba(255, 205, 210, 0.85);
             margin-bottom: 2.5rem;
             font-style: italic;
             letter-spacing: 3px;
@@ -355,14 +355,14 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             font-style: italic;
-            color: rgba(200, 200, 200, 0.95);
+            color: rgba(255, 205, 210, 0.95);
             margin-bottom: 2.5rem;
             padding: 1.8rem 2rem;
             border-left: 4px solid var(--theme-primary);
             background: linear-gradient(
                 135deg,
-                rgba(117, 117, 117, 0.06) 0%,
-                rgba(117, 117, 117, 0.02) 100%
+                rgba(244, 67, 54, 0.06) 0%,
+                rgba(244, 67, 54, 0.02) 100%
             );
             border-radius: 0 16px 16px 0;
             position: relative;
@@ -375,7 +375,7 @@
             top: -10px;
             left: 12px;
             font-size: 4rem;
-            color: rgba(117, 117, 117, 0.2);
+            color: rgba(244, 67, 54, 0.2);
             font-family: 'Playfair Display', serif;
             line-height: 1;
         }
@@ -387,7 +387,7 @@
         .back-button {
             display: inline-block;
             padding: 1.1rem 3rem;
-            background: linear-gradient(135deg, #757575 0%, #616161 50%, #424242 100%);
+            background: linear-gradient(135deg, #009688 0%, #00796B 50%, #004D40 100%);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -396,7 +396,7 @@
             font-weight: 600;
             letter-spacing: 1px;
             box-shadow:
-                0 8px 25px rgba(117, 117, 117, 0.3),
+                0 8px 25px rgba(244, 67, 54, 0.3),
                 0 2px 8px rgba(0, 0, 0, 0.15);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             animation: buttonPulse 2.5s ease-in-out infinite;
@@ -432,7 +432,7 @@
         .back-button:hover {
             transform: translateY(-4px) scale(1.06) !important;
             box-shadow:
-                0 14px 40px rgba(117, 117, 117, 0.5),
+                0 14px 40px rgba(244, 67, 54, 0.5),
                 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
@@ -446,9 +446,9 @@
             background: linear-gradient(
                 135deg,
                 rgba(255, 255, 255, 0.04) 0%,
-                rgba(117, 117, 117, 0.04) 100%
+                rgba(244, 67, 54, 0.04) 100%
             );
-            border: 1px solid rgba(117, 117, 117, 0.15);
+            border: 1px solid rgba(244, 67, 54, 0.15);
             border-radius: 24px;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -463,7 +463,7 @@
             font-family: 'Noto Serif SC', serif;
             font-size: 1.6rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #EEEEEE 0%, #BDBDBD 50%, #9E9E9E 100%);
+            background: linear-gradient(135deg, #B9F6CA 0%, #009688 50%, #00796B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -503,18 +503,18 @@
         }
 
         .message-wall-content::-webkit-scrollbar-track {
-            background: rgba(117, 117, 117, 0.05);
+            background: rgba(244, 67, 54, 0.05);
             border-radius: 4px;
         }
 
         .message-wall-content::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, rgba(117, 117, 117, 0.3), rgba(117, 117, 117, 0.5));
+            background: linear-gradient(180deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.5));
             border-radius: 4px;
             transition: background 0.3s ease;
         }
 
         .message-wall-content::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, rgba(117, 117, 117, 0.5), rgba(117, 117, 117, 0.7));
+            background: linear-gradient(180deg, rgba(244, 67, 54, 0.5), rgba(244, 67, 54, 0.7));
         }
 
         /* Ribbon-style message items */
@@ -523,13 +523,13 @@
             background: linear-gradient(
                 135deg,
                 rgba(255, 255, 255, 0.07) 0%,
-                rgba(117, 117, 117, 0.05) 100%
+                rgba(244, 67, 54, 0.05) 100%
             );
             border-left: 4px solid;
             border-image: linear-gradient(
                 180deg,
-                #757575,
-                rgba(117, 117, 117, 0.3)
+                #009688,
+                rgba(244, 67, 54, 0.3)
             ) 1;
             padding: 1.3rem 1.5rem 1.3rem 1.8rem;
             border-radius: 0 16px 16px 12px;
@@ -537,19 +537,19 @@
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow:
                 0 4px 15px rgba(0, 0, 0, 0.1),
-                0 1px 3px rgba(117, 117, 117, 0.05);
+                0 1px 3px rgba(244, 67, 54, 0.05);
         }
 
         .message-item:hover {
             background: linear-gradient(
                 135deg,
                 rgba(255, 255, 255, 0.1) 0%,
-                rgba(117, 117, 117, 0.08) 100%
+                rgba(244, 67, 54, 0.08) 100%
             );
             transform: translateX(4px);
             box-shadow:
                 0 6px 20px rgba(0, 0, 0, 0.15),
-                0 0 15px rgba(117, 117, 117, 0.1);
+                0 0 15px rgba(244, 67, 54, 0.1);
         }
 
         /* Staggered animation delays */
@@ -598,7 +598,7 @@
         .message-sender {
             font-family: 'Noto Serif SC', serif;
             font-size: 0.95rem;
-            color: #BDBDBD;
+            color: #00796B;
             margin-bottom: 0.5rem;
             font-weight: 600;
             letter-spacing: 1px;
@@ -622,10 +622,10 @@
             width: 100%;
             padding: 1rem;
             margin-top: 1.5rem;
-            background: linear-gradient(135deg, rgba(117, 117, 117, 0.1), rgba(117, 117, 117, 0.05));
-            border: 1px solid rgba(117, 117, 117, 0.2);
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(244, 67, 54, 0.05));
+            border: 1px solid rgba(244, 67, 54, 0.2);
             border-radius: 14px;
-            color: #BDBDBD;
+            color: #00796B;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
             font-weight: 600;
@@ -646,7 +646,7 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(117, 117, 117, 0.1),
+                rgba(244, 67, 54, 0.1),
                 transparent
             );
             transition: left 0.5s ease;
@@ -657,10 +657,10 @@
         }
 
         .view-more-button:hover {
-            background: linear-gradient(135deg, rgba(117, 117, 117, 0.2), rgba(117, 117, 117, 0.1));
-            border-color: rgba(117, 117, 117, 0.4);
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.2), rgba(244, 67, 54, 0.1));
+            border-color: rgba(244, 67, 54, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(117, 117, 117, 0.15);
+            box-shadow: 0 6px 20px rgba(244, 67, 54, 0.15);
         }
 
         /* ==========================================
@@ -682,7 +682,7 @@
             font-size: 2rem;
             color: var(--theme-primary);
             animation: starTwinkle 3s ease-in-out infinite;
-            text-shadow: 0 0 15px rgba(117, 117, 117, 0.4);
+            text-shadow: 0 0 15px rgba(244, 67, 54, 0.4);
         }
 
         @keyframes starTwinkle {
@@ -868,13 +868,13 @@
                 transition-duration: 0.01ms !important;
             }
         }
-
-    </style>
+    
+</style>
 </head>
 <body>
     <!-- Theme Background -->
     <div class="theme-background"></div>
-
+    
     <!-- Background Effects -->
     <div class="background-container">
         <div class="bokeh-container" id="bokehContainer"></div>
@@ -885,10 +885,7 @@
         <div class="soft-glow"></div>
         <div class="ambient-lighting"></div>
     </div>
-
-    <!-- Background Pattern -->
-    <div class="bg-pattern-overlay"></div>
-
+    
     <!-- Decorative Elements -->
     <div class="decorative-elements">
         <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
@@ -896,98 +893,103 @@
         <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
         <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
     </div>
-
+    
     <!-- Teacher Profile -->
     <main class="teacher-profile">
         <div class="profile-card">
-            <div class="profile-avatar">📜</div>
-            <h1 class="profile-name">朱彦翰老师</h1>
-            <p class="profile-title">历史老师</p>
+            <div class="profile-avatar">📚</div>
+            <h1 class="profile-name">Teacher Pavithra</h1>
+            <p class="profile-title">English Teacher</p>
             <p class="profile-message">
-                感谢朱彦翰老师用生动有趣的方式带我们穿越历史的长河。从远古文明的萌芽到现代社会的变迁，每一堂历史课都是一场精彩的时空之旅。您总能把枯燥的年代和事件变成引人入胜的故事，让我们在与古人对话中感悟智慧。您对历史的热爱感染了我们每一个人，让我们学会用批判性思维看待过去、理解现在。感谢您教会我们以史为鉴，明白历史不仅是记忆，更是思考的宝库。祝您教师节快乐！
+                Thank you, Teacher Pavithra, for your exceptional teaching and unwavering dedication to English education. Your patient approach and innovative methods have inspired countless students to achieve their best. You bring a unique perspective to every lesson, challenging us to think critically and reach new heights. Your patience and understanding create a supportive learning environment where everyone feels valued. You have a remarkable ability to make complex grammar concepts accessible and engaging. Your commitment to excellence in education sets a shining example for both students and colleagues. Thank you for your invaluable contributions to our school community and for being such an inspiring mentor. Your influence will continue to guide us long after we leave your classroom.
             </p>
             <div class="profile-quote">
-                "以史为鉴，可以知兴替。"
+                "The limits of my language mean the limits of my world."
             </div>
-            <a href="../index.html" class="back-button">← 返回庆祝页面</a>
-
-
+            <a href="../index.html" class="back-button">← Back to Celebration</a>
+            
+            
             <!-- ABCD Quiz Section -->
-            <div class="quiz-section" id="quizSection" style="margin-top: 2.5rem; padding: 2rem; background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(117,117,117,0.03) 100%); border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); text-align: left;">
-                <h3 class="quiz-title" style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; text-align: center; letter-spacing: 2px;">📝 知识挑战</h3>
+            <div class="quiz-section" id="quizSection" style="margin-top: 2.5rem; padding: 2rem; background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(244,67,54,0.03) 100%); border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); text-align: left;">
+                <h3 class="quiz-title" style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; text-align: center; letter-spacing: 2px;">ðŸ“ çŸ¥è¯†æŒ‘æˆ˜</h3>
                 <p class="quiz-question" id="quizQuestion" style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,240,0.95); margin-bottom: 1rem; line-height: 1.6;"></p>
                 <div class="quiz-options" id="quizOptions" style="display: flex; flex-direction: column; gap: 0.6rem;"></div>
                 <p class="quiz-error" id="quizError" style="color: #ff6b6b; font-size: 0.95rem; margin-top: 0.8rem; display: none; text-align: center;"></p>
-                <button class="quiz-submit-btn" id="quizSubmitBtn" style="display: block; margin: 1rem auto 0; padding: 0.8rem 2.5rem; background: linear-gradient(135deg, var(--gold-primary, #FFD700), var(--gold-secondary, #DAA520)); color: var(--navy-blue, #1a1a2e); border: none; border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(255,215,0,0.3); transition: all 0.3s ease;">提交答案</button>
+                <button class="quiz-submit-btn" id="quizSubmitBtn" style="display: block; margin: 1rem auto 0; padding: 0.8rem 2.5rem; background: linear-gradient(135deg, var(--gold-primary, #FFD700), var(--gold-secondary, #DAA520)); color: var(--navy-blue, #1a1a2e); border: none; border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(255,215,0,0.3); transition: all 0.3s ease;">æäº¤ç­”æ¡ˆ</button>
             </div>
 
 
-
+            
             <!-- Message Wall -->
             <div class="message-wall">
-                <h3 class="message-wall-title">学生留言</h3>
-                <div class="message-wall-content"><div class="message-item"><p class="message-sender">黄宥敏</p><p class="message-text">祝全体老师，身体健康、教师节快乐！</p></div>
+                <h3 class="message-wall-title">Student Messages</h3>
+                <div class="message-wall-content"><div class="message-item"><p class="message-sender">黄宥敏</p><p class="message-text">Wishing all teachers good health and happiness. Happy Teachers' Day to all educators!</p></div>
+                    <div class="message-item"><p class="message-sender">Lee Wei Hann</p><p class="message-text">I sincerely wish all teachers a happy festival! May you be healthy, work smoothly, live happily, and have all your wishes fulfilled; may time treat you gently, and may every effort you make bear beautiful fruits like blossoms in a garden, with students filling the world, and your original dedication never changing! 🌸📚✨</p></div>
                     
                     <div class="message-item">
                         <p class="message-sender">吴紫涵</p>
-                        <p class="message-text">老师开心就好。</p>
+                        <p class="message-text">Teachers, your happiness matters most.</p>
                     </div>
                     <div class="message-item">
                         <p class="message-sender">侯甜芊</p>
-                        <p class="message-text">祝全体老师身体健康。</p>
+                        <p class="message-text">Wishing all teachers good health and happiness.</p>
                     </div>
                     <div class="message-item">
-                        <p class="message-sender">李韡翰</p>
-                        <p class="message-text">衷心祝愿所有老师节日快乐！愿您身体健康、工作顺利、生活幸福、万事如意；愿岁月温柔以待，所付出的每一份努力都能收获满园芬芳，桃李满天下，初心永不改！🌸📚✨ GITHUB:https://github.com/gausan-hj</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">I wish you 10 more years of teaching. （祝您未来十年继续教导我们。）</p>
                     </div>
                     <div class="message-item">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">老师的课堂总是充满故事，每一个历史事件都像在看电影一样精彩。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Thank you for teaching us irregular verbs. I can finally use past tense correctly in my writing.</p>
                     </div>
                     <div class="message-item">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">以前觉得历史很枯燥，是朱老师让我发现历史原来这么有意思。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Your reading comprehension exercises are very helpful. I can now understand complex texts better.</p>
                     </div>
                     <div class="message-item">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">老师教我们以史为鉴，学会从历史中汲取智慧。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">The writing workshops you conducted were excellent. My essay writing has improved significantly.</p>
                     </div>
                     <div class="message-item">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">朱老师分享的历史故事让我们的视野变得更加开阔。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Your pronunciation lessons helped me speak English more confidently. Thank you for your guidance!</p>
+                    </div>
+                    <div class="message-item">
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">I used to be afraid of English, but your classes made me love the language. Literature is now my favorite subject.</p>
                     </div>
                     <div class="message-item hidden-message">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">老师的教学让我们明白历史不仅仅是年代和事件的记忆。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Thank you for making grammar lessons interesting. I used to find them boring, but now I enjoy learning.</p>
                     </div>
                     <div class="message-item hidden-message">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">感谢朱老师用幽默风趣的方式讲解复杂的历史背景。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Your vocabulary exercises are very helpful. I can now express myself better in English.</p>
                     </div>
                     <div class="message-item hidden-message">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">老师的历史课总是让人意犹未尽，下课铃响时还在回味刚才的故事。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Thank you for correcting our mistakes gently. I learn better when you explain why something is wrong.</p>
                     </div>
                     <div class="message-item hidden-message">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">因为朱老师的教导，我开始主动阅读历史书籍。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">The grammar foundation you taught me has been invaluable in my university studies. Thank you!</p>
                     </div>
                     <div class="message-item hidden-message">
-                        <p class="message-sender">学生</p>
-                        <p class="message-text">老师教会我们理解历史不是简单的背诵，而是思考与反思。</p>
+                        <p class="message-sender">Student</p>
+                        <p class="message-text">Your speaking classes helped me overcome my fear of public speaking. I am much more confident now.</p>
                     </div>
                 </div>
-                <button class="view-more-button" id="viewMoreButton">查看更多留言</button>
+                <button class="view-more-button" id="viewMoreButton">View More Messages</button>
             </div>
         </div>
     </main>
-
+    
     <script src="../script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const viewMoreButton = document.getElementById('viewMoreButton');
             const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
-
+            
             if (viewMoreButton && hiddenMessages.length > 0) {
                 viewMoreButton.addEventListener('click', function() {
                     hiddenMessages.forEach(msg => {
