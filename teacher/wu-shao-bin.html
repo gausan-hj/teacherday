@@ -1,0 +1,970 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="吴绍宾老师 - 教师节庆祝">
+    <title>吴绍宾 | Teachers' Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+        :root {
+            --theme-primary: #EC4899;
+            --theme-secondary: #BC397A;
+            --theme-tertiary: #76244C;
+            --theme-light: #EF6CAD;
+            --theme-gradient: linear-gradient(135deg, #EC4899 0%, #BC397A 50%, #76244C 100%);
+            --glow-red: rgba(236, 72, 153, 0.6);
+            --glow-soft: rgba(236, 72, 153, 0.25);
+            --glass-bg: rgba(236, 72, 153, 0.08);
+            --glass-border: rgba(236, 72, 153, 0.25);
+        }
+
+        /* ==========================================
+           Floating Particles & Sparkles
+           ========================================== */
+
+        .sparkle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, rgba(200, 200, 200, 0.9) 0%, rgba(236, 72, 153, 0.4) 50%, transparent 100%);
+            border-radius: 50%;
+            animation: sparkleDrift var(--duration, 8s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        @keyframes sparkleDrift {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+                transform: translateY(80vh) translateX(15px) scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateY(40vh) translateX(-20px) scale(1.2);
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(10px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 14px;
+            background: var(--theme-primary);
+            opacity: 0.5;
+            border-radius: 2px;
+            animation: confettiFall var(--duration, 12s) linear infinite;
+            animation-delay: var(--delay, 0s);
+            will-change: transform, opacity;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-20px) rotate(0deg) translateX(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(50vh) rotate(360deg) translateX(var(--drift, 30px));
+            }
+            95% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg) translateX(var(--drift-end, -10px));
+                opacity: 0;
+            }
+        }
+
+        /* ==========================================
+           Theme Background with Pattern Overlay
+           ========================================== */
+
+        .theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(97, 97, 97, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(66, 66, 66, 0.08) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .bg-pattern-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.8) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.8) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: patternDrift 30s linear infinite;
+        }
+
+        @keyframes patternDrift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        /* ==========================================
+           Teacher Profile Layout
+           ========================================== */
+
+        .teacher-profile {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            gap: 2.5rem;
+        }
+
+        /* ==========================================
+           Profile Card — Premium Glassmorphism
+           ========================================== */
+
+        .profile-card {
+            position: relative;
+            max-width: 700px;
+            width: 100%;
+            padding: 4rem;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.08) 0%,
+                rgba(236, 72, 153, 0.06) 50%,
+                rgba(255, 255, 255, 0.04) 100%
+            );
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            border-radius: 32px;
+            backdrop-filter: blur(24px) saturate(1.4);
+            -webkit-backdrop-filter: blur(24px) saturate(1.4);
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.35),
+                0 8px 32px rgba(236, 72, 153, 0.15),
+                0 0 60px rgba(236, 72, 153, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: profileFloat 6s ease-in-out infinite, borderGlow 4s ease-in-out infinite;
+            overflow: visible;
+            z-index: 1;
+        }
+
+        /* Border glow pseudo-element */
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 34px;
+            padding: 2px;
+            background: linear-gradient(
+                135deg,
+                rgba(236, 72, 153, 0.4),
+                rgba(189, 189, 189, 0.2),
+                rgba(236, 72, 153, 0.4),
+                rgba(189, 189, 189, 0.2)
+            );
+            background-size: 400% 400%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderGlow 6s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ==========================================
+           Avatar — Large with Ring Animation
+           ========================================== */
+
+        .profile-avatar {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #EF6CAD 0%, #EC4899 60%, #BC397A 100%);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            box-shadow:
+                0 0 40px rgba(236, 72, 153, 0.35),
+                0 0 80px rgba(236, 72, 153, 0.15),
+                0 12px 40px rgba(0, 0, 0, 0.25),
+                inset 0 -4px 12px rgba(0, 0, 0, 0.15),
+                inset 0 4px 12px rgba(255, 255, 255, 0.2);
+            animation: avatarGlow 3s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* Outer decorative ring */
+        .profile-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(236, 72, 153, 0.3);
+            animation: ringRotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        /* Second dashed ring */
+        .profile-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -16px;
+            border-radius: 50%;
+            border: 1px dashed rgba(236, 72, 153, 0.2);
+            animation: ringRotate 15s linear infinite reverse;
+            z-index: -1;
+        }
+
+        @keyframes ringRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes avatarGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 40px rgba(236, 72, 153, 0.35),
+                    0 0 80px rgba(236, 72, 153, 0.15),
+                    0 12px 40px rgba(0, 0, 0, 0.25),
+                    inset 0 -4px 12px rgba(0, 0, 0, 0.15),
+                    inset 0 4px 12px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow:
+                    0 0 60px rgba(236, 72, 153, 0.5),
+                    0 0 100px rgba(236, 72, 153, 0.25),
+                    0 12px 40px rgba(0, 0, 0, 0.25),
+                    inset 0 -4px 12px rgba(0, 0, 0, 0.15),
+                    inset 0 4px 12px rgba(255, 255, 255, 0.25);
+            }
+        }
+
+        /* ==========================================
+           Typography — Name, Title, Message, Quote
+           ========================================== */
+
+        .profile-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F49AC6 0%, #F075B2 40%, #EF6CAD 70%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.2rem;
+            animation: textGlow 3s ease-in-out infinite;
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.3));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.6));
+            }
+        }
+
+        .profile-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: rgba(200, 200, 200, 0.85);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        .profile-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 240, 0.92);
+            line-height: 2;
+            margin-bottom: 2.5rem;
+            padding: 0 0.5rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .profile-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: rgba(200, 200, 200, 0.95);
+            margin-bottom: 2.5rem;
+            padding: 1.8rem 2rem;
+            border-left: 4px solid var(--theme-primary);
+            background: linear-gradient(
+                135deg,
+                rgba(236, 72, 153, 0.06) 0%,
+                rgba(236, 72, 153, 0.02) 100%
+            );
+            border-radius: 0 16px 16px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            font-size: 4rem;
+            color: rgba(236, 72, 153, 0.2);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        /* ==========================================
+           Back Button
+           ========================================== */
+
+        .back-button {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: linear-gradient(135deg, #EC4899 0%, #BC397A 50%, #76244C 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow:
+                0 8px 25px rgba(236, 72, 153, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: buttonPulse 2.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .back-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .back-button:hover {
+            transform: translateY(-4px) scale(1.06) !important;
+            box-shadow:
+                0 14px 40px rgba(236, 72, 153, 0.5),
+                0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ==========================================
+           Message Wall — Ribbon Cascade Style
+           ========================================== */
+
+        .message-wall {
+            margin-top: 3rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.04) 0%,
+                rgba(236, 72, 153, 0.04) 100%
+            );
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .message-wall-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F49AC6 0%, #F075B2 50%, #EF6CAD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 4px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .message-wall-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--theme-primary), transparent);
+            border-radius: 2px;
+        }
+
+        .message-wall-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 0.8rem;
+            padding-left: 0.5rem;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        .message-wall-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .message-wall-content::-webkit-scrollbar-track {
+            background: rgba(236, 72, 153, 0.05);
+            border-radius: 4px;
+        }
+
+        .message-wall-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, rgba(236, 72, 153, 0.3), rgba(236, 72, 153, 0.5));
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .message-wall-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, rgba(236, 72, 153, 0.5), rgba(236, 72, 153, 0.7));
+        }
+
+        /* Ribbon-style message items */
+        .message-item {
+            position: relative;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.07) 0%,
+                rgba(236, 72, 153, 0.05) 100%
+            );
+            border-left: 4px solid;
+            border-image: linear-gradient(
+                180deg,
+                #EC4899,
+                rgba(236, 72, 153, 0.3)
+            ) 1;
+            padding: 1.3rem 1.5rem 1.3rem 1.8rem;
+            border-radius: 0 16px 16px 12px;
+            animation: ribbonSlideIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(236, 72, 153, 0.05);
+        }
+
+        .message-item:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(236, 72, 153, 0.08) 100%
+            );
+            transform: translateX(4px);
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                0 0 15px rgba(236, 72, 153, 0.1);
+        }
+
+        /* Staggered animation delays */
+        .message-item:nth-child(1) { animation-delay: 0.1s; }
+        .message-item:nth-child(2) { animation-delay: 0.2s; }
+        .message-item:nth-child(3) { animation-delay: 0.3s; }
+        .message-item:nth-child(4) { animation-delay: 0.4s; }
+        .message-item:nth-child(5) { animation-delay: 0.5s; }
+        .message-item:nth-child(6) { animation-delay: 0.6s; }
+        .message-item:nth-child(7) { animation-delay: 0.7s; }
+        .message-item:nth-child(8) { animation-delay: 0.8s; }
+        .message-item:nth-child(9) { animation-delay: 0.9s; }
+        .message-item:nth-child(10) { animation-delay: 1.0s; }
+        .message-item:nth-child(11) { animation-delay: 1.1s; }
+        .message-item:nth-child(12) { animation-delay: 1.2s; }
+
+        @keyframes ribbonSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px) rotate(-2deg) scaleX(0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(5px) rotate(0.5deg) scaleX(1.01);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scaleX(1);
+            }
+        }
+
+        /* Ribbon accent triangle on top-left corner */
+        .message-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 16px 16px;
+            border-color: transparent transparent var(--theme-primary) transparent;
+            opacity: 0.6;
+        }
+
+        .message-sender {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem;
+            color: #F075B2;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .message-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 240, 0.88);
+            line-height: 1.7;
+        }
+
+        /* Hidden messages */
+        .message-item.hidden-message {
+            display: none;
+        }
+
+        /* View More Button */
+        .view-more-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            border-radius: 14px;
+            color: #F075B2;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-more-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(236, 72, 153, 0.1),
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .view-more-button:hover::before {
+            left: 100%;
+        }
+
+        .view-more-button:hover {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(236, 72, 153, 0.1));
+            border-color: rgba(236, 72, 153, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.15);
+        }
+
+        /* ==========================================
+           Decorative Stars
+           ========================================== */
+
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .decorative-star {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--theme-primary);
+            animation: starTwinkle 3s ease-in-out infinite;
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ==========================================
+           Mobile Responsiveness (max-width: 768px)
+           ========================================== */
+
+        @media (max-width: 768px) {
+            .teacher-profile {
+                padding: 1.5rem 1rem;
+                gap: 1.5rem;
+            }
+
+            .profile-card {
+                max-width: 95vw;
+                padding: 2.5rem 2rem;
+                border-radius: 24px;
+                animation: profileFloatMobile 5s ease-in-out infinite;
+            }
+
+            @keyframes profileFloatMobile {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-5px); }
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+                border-width: 3px;
+                margin-bottom: 2rem;
+            }
+
+            /* Hide outer rings on mobile for performance */
+            .profile-avatar::before,
+            .profile-avatar::after {
+                display: none;
+            }
+
+            .profile-name {
+                font-size: 2.5rem;
+                margin-bottom: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            .profile-title {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .profile-message {
+                font-size: 1.1rem;
+                line-height: 1.9;
+                margin-bottom: 2rem;
+                text-align: left;
+            }
+
+            .profile-quote {
+                font-size: 1.15rem;
+                padding: 1.4rem 1.5rem;
+                margin-bottom: 2rem;
+                border-left-width: 3px;
+            }
+
+            .profile-quote::before {
+                font-size: 3rem;
+                top: -5px;
+                left: 8px;
+            }
+
+            .back-button {
+                padding: 1rem 2.5rem;
+                font-size: 1.05rem;
+            }
+
+            /* Message Wall Mobile */
+            .message-wall {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+                margin-top: 2.5rem;
+            }
+
+            .message-wall-title {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .message-wall-content {
+                max-height: 350px;
+                gap: 1rem;
+                padding-right: 0.4rem;
+            }
+
+            .message-item {
+                padding: 1.1rem 1.2rem 1.1rem 1.5rem;
+                border-left-width: 3px;
+                border-radius: 0 12px 12px 10px;
+            }
+
+            .message-sender {
+                font-size: 0.9rem;
+            }
+
+            .message-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .view-more-button {
+                padding: 0.9rem;
+                font-size: 1rem;
+                margin-top: 1.2rem;
+            }
+
+            .decorative-star {
+                font-size: 1.5rem;
+            }
+
+            /* Disable heavy animations on mobile */
+            .bg-pattern-overlay {
+                display: none;
+            }
+
+            /* Floating sparkles container (generated by JS) */
+            .floating-sparkles {
+                display: none;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .profile-title {
+                font-size: 1.05rem;
+            }
+
+            .profile-message {
+                font-size: 1rem;
+            }
+
+            .profile-quote {
+                font-size: 1rem;
+                padding: 1.2rem;
+            }
+
+            .message-wall {
+                padding: 1.5rem 1rem;
+            }
+
+            .message-wall-title {
+                font-size: 1.15rem;
+            }
+
+            .message-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ==========================================
+           Reduced Motion
+           ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Theme Background -->
+    <div class="theme-background"></div>
+
+    <!-- Background Effects -->
+    <div class="background-container">
+        <div class="bokeh-container" id="bokehContainer"></div>
+        <div class="golden-dust" id="goldenDust"></div>
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        <div class="light-rays"></div>
+        <div class="soft-glow"></div>
+        <div class="ambient-lighting"></div>
+    </div>
+
+    <!-- Background Pattern -->
+    <div class="bg-pattern-overlay"></div>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="decorative-star" style="top: 10%; left: 15%;">✦</div>
+        <div class="decorative-star" style="top: 20%; right: 20%; animation-delay: 0.5s;">✦</div>
+        <div class="decorative-star" style="bottom: 30%; left: 10%; animation-delay: 1s;">✦</div>
+        <div class="decorative-star" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">✦</div>
+    </div>
+
+    <!-- Teacher Profile -->
+    <main class="teacher-profile">
+        <div class="profile-card">
+            <div class="profile-avatar">📋</div>
+            <h1 class="profile-name">吴绍宾老师</h1>
+            <p class="profile-title">教务处</p>
+            <p class="profile-message">
+                感谢吴绍宾老师在教务工作中的认真付出和优质服务。无论日常教学安排的琐碎事务，还是需要协调处理的紧急工作，您总是以饱满的工作热情和高度负责的态度对待每一项任务。您用实际行动诠释了什么是敬业乐业，用耐心和细心保障了学校教学的正常运转。感谢您为老师和学生们提供的便利与支持。祝您教师节快乐！
+            </p>
+            <div class="profile-quote">
+                "认真负责，服务师生。"
+            </div>
+            <a href="../index.html" class="back-button">← 返回庆祝页面</a>
+
+
+            <!-- ABCD Quiz Section -->
+            <div class="quiz-section" id="quizSection" style="margin-top: 2.5rem; padding: 2rem; background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(236, 72, 153, 0.03) 100%); border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); text-align: left;">
+                <h3 class="quiz-title" style="font-family: 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; text-align: center; letter-spacing: 2px;">📝 知识挑战</h3>
+                <p class="quiz-question" id="quizQuestion" style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,240,0.95); margin-bottom: 1rem; line-height: 1.6;"></p>
+                <div class="quiz-options" id="quizOptions" style="display: flex; flex-direction: column; gap: 0.6rem;"></div>
+                <p class="quiz-error" id="quizError" style="color: #ff6b6b; font-size: 0.95rem; margin-top: 0.8rem; display: none; text-align: center;"></p>
+                <button class="quiz-submit-btn" id="quizSubmitBtn" style="display: block; margin: 1rem auto 0; padding: 0.8rem 2.5rem; background: linear-gradient(135deg, var(--gold-primary, #FFD700), var(--gold-secondary, #DAA520)); color: var(--navy-blue, #1a1a2e); border: none; border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(255,215,0,0.3); transition: all 0.3s ease;">提交答案</button>
+            </div>
+
+
+
+            <!-- Message Wall -->
+            <div class="message-wall">
+                <h3 class="message-wall-title">学生留言</h3>
+                <div class="message-wall-content"><div class="message-item"><p class="message-sender">黄宥敏</p><p class="message-text">祝全体老师，身体健康、教师节快乐！</p></div>
+                    <div class="message-item"><p class="message-sender">吴紫涵</p><p class="message-text">老师开心就好。</p></div>
+                    <div class="message-item"><p class="message-sender">侯甜芊</p><p class="message-text">祝全体老师身体健康。</p></div>
+                    <div class="message-item"><p class="message-sender">李韡翰</p><p class="message-text">衷心祝愿所有老师节日快乐！愿您身体健康、工作顺利、生活幸福、万事如意；愿岁月温柔以待，所付出的每一份努力都能收获满园芬芳，桃李满天下，初心永不改！🌸📚✨</p></div>
+                    <div class="message-item"><p class="message-sender">学生</p><p class="message-text">老师的课堂总是充满知识，每一个知识点都像宝藏一样精彩。</p></div>
+                    <div class="message-item"><p class="message-sender">学生</p><p class="message-text">以前觉得这门课很枯燥，是老师让我发现原来这么有意思。</p></div>
+                    <div class="message-item"><p class="message-sender">学生</p><p class="message-text">老师教我们以正确的态度面对学习中的困难。</p></div>
+                    <div class="message-item"><p class="message-sender">学生</p><p class="message-text">老师分享的知识让我们视野变得更加开阔。</p></div>
+                    <div class="message-item hidden-message"><p class="message-sender">学生A</p><p class="message-text">老师的教学让我们明白学习不仅仅是记忆知识。</p></div>
+                    <div class="message-item hidden-message"><p class="message-sender">学生A</p><p class="message-text">感谢老师用耐心和智慧引导我们成长。</p></div>
+                    <div class="message-item hidden-message"><p class="message-sender">学生A</p><p class="message-text">老师的课总是让人意犹未尽，下课铃响时还在回味刚才的内容。</p></div>
+                    <div class="message-item hidden-message"><p class="message-sender">学生A</p><p class="message-text">因为老师的教导，我开始主动阅读相关的书籍。</p></div>
+                    <div class="message-item hidden-message"><p class="message-sender">学生A</p><p class="message-text">老师教会我们理解知识不是简单的背诵，而是思考与反思。</p></div>
+                    </div>
+                <button class="view-more-button" id="viewMoreButton">查看更多留言</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewMoreButton = document.getElementById('viewMoreButton');
+            const hiddenMessages = document.querySelectorAll('.message-item.hidden-message');
+
+            if (viewMoreButton && hiddenMessages.length > 0) {
+                viewMoreButton.addEventListener('click', function() {
+                    hiddenMessages.forEach(msg => {
+                        msg.style.display = 'block';
+                        msg.style.animation = 'messageFadeIn 0.3s ease-out';
+                    });
+                    viewMoreButton.style.display = 'none';
+                });
+            } else {
+                if (viewMoreButton) {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
