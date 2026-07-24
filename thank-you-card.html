@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海曦高中理事会 · 教师节感谢</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0a1628 0%, #0f2847 15%, #143a5e 30%, #1a5276 45%, #1e6b8e 55%, #2a9dab 65%, #48bb78 78%, #68d391 88%, #fbd38d 95%, #f6ad55 100%);
+    background-attachment: fixed;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ===== 晨曦光线 ===== */
+  .sun-rays {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .ray {
+    position: absolute;
+    top: -10%;
+    width: 2px;
+    height: 120%;
+    opacity: 0.12;
+    transform-origin: top center;
+  }
+
+  .ray::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 82px;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgba(253,211,77,0.3), transparent 70%);
+    transform: skewX(-2deg);
+  }
+
+  /* ===== 海浪 ===== */
+  .waves {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .wave-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+  }
+
+  .wave-layer svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave1 { animation: waveMove1 8s ease-in-out infinite; }
+  .wave2 { animation: waveMove2 10s ease-in-out infinite; }
+  .wave3 { animation: waveMove3 12s ease-in-out infinite; }
+
+  @keyframes waveMove1 { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-12%); } }
+  @keyframes waveMove2 { 0%,100% { transform: translateX(0); } 50% { transform: translateX(8%); } }
+  @keyframes waveMove3 { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-5%); } }
+
+  /* ===== 星星闪烁 ===== */
+  .stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 55%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle var(--dur) ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.8; }
+  }
+
+  /* ===== 光粒子 ===== */
+  .particles {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: rgba(253, 211, 77, 0.6);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: floatUp var(--dur) ease-in infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+  }
+
+  /* ===== 主内容 ===== */
+  .main {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px 120px;
+  }
+
+  /* ===== 顶部标题区 ===== */
+  .hero {
+    text-align: center;
+    padding: 60px 0 40px;
+    animation: fadeInDown 1.2s ease-out;
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(253,211,77,0.15);
+    border: 1px solid rgba(253,211,77,0.3);
+    backdrop-filter: blur(10px);
+    padding: 8px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: rgba(253,211,77,0.9);
+    margin-bottom: 30px;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fbd38d 0%, #faf5cb 40%, #f6ad55 70%, #fc8181 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+  }
+
+  .hero .subtitle {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+  }
+
+  .divider-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(253,211,77,0.6), transparent);
+    margin: 24px auto;
+  }
+
+  /* ===== 卡片 ===== */
+  .card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 48px 40px;
+    margin-bottom: 32px;
+    animation: fadeInUp 1s ease-out both;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.3s; }
+  .card:nth-child(2) { animation-delay: 0.6s; }
+  .card:nth-child(3) { animation-delay: 0.9s; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.95);
+  }
+
+  .card p {
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 16px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  .highlight {
+    color: rgba(253,211,77,0.95);
+    font-weight: 500;
+  }
+
+  .em {
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ===== 关键词标签 ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    transition: all 0.3s;
+  }
+
+  .tag:hover {
+    background: rgba(253,211,77,0.12);
+    border-color: rgba(253,211,77,0.3);
+    color: rgba(253,211,77,0.95);
+  }
+
+  /* ===== 诗意部分 ===== */
+  .poetry {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeInUp 1s ease-out 1.2s both;
+  }
+
+  .poetry .big-word {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(60px, 12vw, 100px);
+    font-weight: 900;
+    background: linear-gradient(135deg, rgba(253,211,77,0.9), rgba(250,245,203,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.4;
+  }
+
+  .poetry .explanation {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 16px;
+    line-height: 2;
+  }
+
+  /* ===== 底部签名 ===== */
+  .signature-section {
+    text-align: center;
+    padding: 60px 0 40px;
+    animation: fadeInUp 1s ease-out 1.5s both;
+  }
+
+  .signature-section .greeting {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 30px;
+  }
+
+  .signature-section .date {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+
+  /* ===== 小爱心浮动 ===== */
+  .floating-hearts {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0;
+    animation: heartFloat var(--dur) ease-in-out infinite;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes heartFloat {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.4; }
+    80% { opacity: 0.15; }
+    100% { transform: translateY(-100vh) rotate(30deg); opacity: 0; }
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 600px) {
+    .main { padding: 40px 16px 100px; }
+    .card { padding: 32px 24px; border-radius: 18px; }
+    .card h2 { font-size: 22px; }
+    .card p { font-size: 15px; line-height: 1.9; }
+    .hero { padding: 40px 0 30px; }
+  }
+
+  /* ===== 打印样式 ===== */
+  @media print {
+    body { background: white !important; color: #333 !important; }
+    .sun-rays, .stars, .particles, .waves, .floating-hearts { display: none; }
+    .card { background: #f9f9f9; border: 1px solid #ddd; color: #333; }
+    .card p { color: #555; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 天空 -->
+<div class="sun-rays" id="sunRays"></div>
+<div class="stars" id="stars"></div>
+<div class="particles" id="particles"></div>
+
+<!-- 海浪 -->
+<div class="waves">
+  <div class="wave-layer wave3">
+    <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+      <path d="M0,120 C240,180 480,60 720,120 C960,180 1200,60 1440,120 L1440,180 L0,180 Z" fill="rgba(255,255,255,0.04)"/>
+    </svg>
+  </div>
+  <div class="wave-layer wave2">
+    <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+      <path d="M0,140 C360,80 720,160 1080,100 C1260,70 1380,120 1440,140 L1440,180 L0,180 Z" fill="rgba(255,255,255,0.06)"/>
+    </svg>
+  </div>
+  <div class="wave-layer wave1">
+    <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+      <path d="M0,150 C200,130 400,170 600,150 C800,130 1000,170 1200,145 C1350,135 1400,155 1440,150 L1440,180 L0,180 Z" fill="rgba(255,255,255,0.08)"/>
+    </svg>
+  </div>
+</div>
+
+<!-- 小爱心 -->
+<div class="floating-hearts" id="floatingHearts"></div>
+
+<!-- 主内容 -->
+<div class="main">
+
+  <!-- 顶部 -->
+  <section class="hero">
+    <span class="badge">敬 此 致 谢</span>
+    <h1>海 曦</h1>
+    <p class="subtitle">感恩有你们，一路同行</p>
+    <div class="divider-line"></div>
+  </section>
+
+  <!-- 卡片1：感谢信 -->
+  <section class="card">
+    <span class="card-icon">🌅</span>
+    <h2>给高中理事会全体同仁的一封信</h2>
+    <p>
+      今天是<strong class="highlight">教师节</strong>，在这个充满感恩与温馨的日子里，我想向理事会每一位成员说一声：<strong class="em">辛苦了！</strong>
+    </p>
+    <p>
+      感谢大家一直以来对教育事业的满腔热忱。从教师节的精心策划到每一项活动的顺利开展——<span class="highlight">舞台布置、流程设计、节目编排、后勤保障</span>……每一处细节都凝聚着你们的智慧与汗水。
+    </p>
+    <p>
+      是你们用无私的付出，让这份对教师的敬意得以传递；是你们用细致的安排，让这个节日充满了温暖与感动。
+    </p>
+    <div class="tags">
+      <span class="tag">🎨 精心策划</span>
+      <span class="tag">💡 智慧结晶</span>
+      <span class="tag">🤝 无私奉献</span>
+      <span class="tag">❤️ 真诚付出</span>
+      <span class="tag">📋 细致安排</span>
+    </div>
+  </section>
+
+  <!-- 卡片2：海曦寄语 -->
+  <section class="card">
+    <span class="card-icon">🌊</span>
+    <h2>「海曦」— 我们的精神</h2>
+    <p>
+      <span class="highlight">海</span>——<em>"海纳百川，有容乃大。"</em><br>
+      理事会各位同仁以海一样的胸怀包容每一位师生，以博大的胸襟承载教育的希望。<span class="highlight">每一滴水珠都是你们的每一份辛劳。</span>
+    </p>
+    <p>
+      <span class="highlight">曦</span>——<em>"晨光熹微，万物生辉。"</em><br>
+      正如清晨第一缕阳光穿透云霄，<span class="highlight">你们的工作正如这破晓之光</span>，温暖而充满力量，照亮了前行的路，点亮了每一位学子的心灵。
+    </p>
+    <p>
+      愿我们如海般深沉包容，如曦般温暖明亮，共同守护这片教育的沃土。
+    </p>
+  </section>
+
+  <!-- 诗意大字 -->
+  <section class="poetry">
+    <div class="big-word">敬<br>祝<br>教<br>师<br>节<br>快<br>乐</div>
+    <div class="explanation">
+      每一段辛勤付出都值得被铭记<br>
+      每一颗热忱之心都值得被感恩
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <section class="signature-section">
+    <p class="greeting">愿所有耕耘都有收获，所有付出都被温柔以待 🌿</p>
+    <div class="divider-line"></div>
+    <br>
+    <p class="date">二〇二六年7月24日</p>
+  </section>
+
+</div>
+
+<script>
+// 生成星星
+(function(){
+  const container = document.getElementById('stars');
+  for(let i = 0; i < 80; i++){
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random()*100+'%';
+    star.style.top = Math.random()*100+'%';
+    star.style.setProperty('--dur', (2+Math.random()*4)+'s');
+    star.style.animationDelay = Math.random()*4+'s';
+    star.style.width = star.style.height = (1+Math.random()*2)+'px';
+    container.appendChild(star);
+  }
+})();
+
+// 生成光线
+(function(){
+  const container = document.getElementById('sunRays');
+  for(let i = 0; i < 12; i++){
+    const ray = document.createElement('div');
+    ray.className = 'ray';
+    ray.style.left = (10 + i*7.5)+'%';
+    ray.style.transform = `rotate(${-15+i*3}deg)`;
+    ray.style.opacity = 0.04 + Math.random()*0.08;
+    container.appendChild(ray);
+  }
+})();
+
+// 生成光粒子
+(function(){
+  const container = document.getElementById('particles');
+  for(let i = 0; i < 20; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100+'%';
+    p.style.bottom = '-10px';
+    p.style.width = p.style.height = (2+Math.random()*4)+'px';
+    p.style.background = Math.random()>0.5
+      ? 'rgba(253,211,77,0.5)'
+      : 'rgba(255,255,255,0.3)';
+    p.style.setProperty('--dur', (8+Math.random()*12)+'s');
+    p.style.setProperty('--delay', Math.random()*10+'s');
+    container.appendChild(p);
+  }
+})();
+
+// 生成浮动爱心
+(function(){
+  const container = document.getElementById('floatingHearts');
+  const emojis = ['🤍','✨','💛','🌸','⚪'];
+  for(let i = 0; i < 12; i++){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    h.style.left = Math.random()*100+'%';
+    h.style.bottom = '-20px';
+    h.style.fontSize = (12+Math.random()*16)+'px';
+    h.style.setProperty('--dur', (10+Math.random()*15)+'s');
+    h.style.setProperty('--delay', Math.random()*10+'s');
+    container.appendChild(h);
+  }
+})();
+</script>
+
+</body>
+</html>
